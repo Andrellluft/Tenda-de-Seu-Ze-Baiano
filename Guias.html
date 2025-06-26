@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guias da Casa</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logosite.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        const user = localStorage.getItem("usuarioLogado");
+        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+        const pagina = location.pathname.split("/").pop();
+
+        if (!user || !usuarios[user] || !usuarios[user].aprovado || !usuarios[user].permissoes.includes(pagina)) {
+            alert("Acesso negado!");
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <div class="cabecalho">
+        <h1>Guias da Casa</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu-navegacao">
+            <a href="Orixas.html">Orixas</a>
+            <a href="Linhas.html">Linhas</a>
+            <a href="Guias.html">Guias</a>
+            <a href="Filhos.html">Filhos</a>
+            <a href="Pontos.html">Pontos</a>
+            <a href="Banhos.html">Banhos</a>
+            <a href="Historia.html">Historia</a>
+            <a href="conhecimentos.html">Conhecimentos</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </div>
+
+    <section class="card-container">
+
+        <div class="card">
+            <img src="exu-veludo.jpg" alt="Exu Veludo">
+            <h3>Exu Veludo</h3>
+            <p>Reino : Encruzilhadas</p>
+            <iframe class="video-container" width="300" height="250" src="https://www.youtube.com/embed/O1q9pI4SJNY?si=QoasO5QLJufZr9eT"
+                title="Ninguem Pode Comigo , Eu Posso Contudo." frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="mirim-caveirinha.jpg" alt="Exu Maré">
+            <h3>Exu Mirim Caveirinha</h3>
+            <p>Reino :Cemitério</p>
+            <iframe class="video-container" width="300" height="250" src="https://www.youtube.com/embed/JJK1iv_g6v0?si=rAi1OxbRF3yA8oBr"
+                title="Exu Mirim Caveirinha" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="exu-mare.jpg" alt="Exu Maré">
+            <h3>Exu Maré</h3>
+            <p>Reino : Calunga Grande</p>
+            <iframe class="video-container" width="300" height="250" src="https://www.youtube.com/embed/rSAXZtAvKw8?si=AuiNEsLq6Tqgpoc7"
+                title="Maré Maré Maré " frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="exu-das-matas.jpg" alt="Exu das Matas">
+            <h3>Exu das Matas</h3>
+            <p>Reino : Matas</p>
+            <iframe class="video-container" width="300" height="250" src="https://www.youtube.com/embed/UJ7qKiUoTSk"
+                title="Exu da Boca da Mata" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="esmeralda.jpg" alt="Esmeralda">
+            <h3>Cigana Esmeralda</h3>
+            <p>Reino : Lira</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/MSMWfQc01T4?si=_Z_nbub1H7pxGixi" title="nome do ponto aqui"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="exu-caveira.jpg" alt="Exu Caveira">
+            <h3>Exu Caveira</h3>
+            <p>Reino : Cemitério , Encruzilhadas</p>
+            <iframe class="video-container" width="300" height="250" src="XXXXXXXXXXXXXXXXXXXXXXXXX"
+                title="XXXXXXXXXXXXXXXXXXXXXXXXXX" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="rosa-caveira.jpg" alt="Exu Veludo">
+            <h3>Rosa Caveira</h3>
+            <p>Reino : Calunga</p>
+            <iframe class="video-container" width="300" height="250" src="XXXXXXXXXXXXXXXXXXXXXX"
+                title="XXXXXXXXXXXXXXXXXXXXXXXXXX" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="sem-foto.jpg" alt="Cigana Hellena">
+            <h3>Cigana Hellena</h3>
+            <p>Reino : Lira</p>
+            <iframe class="video-container" width="300" height="250" src="xxxxxxxxxxxxxxxxxxxxxx"
+                title="XXXXXXXXXXXXXXXXXXXXXXXXXX" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="ze-baiano.png" alt="Ze Baiano">
+            <h3>Ze Baiano</h3>
+            <p>Linha dos Mestres/Baianos</p>
+            <iframe class="video-container" width="300" height="250" src="xxxxxxxxxxxxxxxxxxxxxx"
+                title="XXXXXXXXXXXXXXXXXXXXXXXXXX" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="tiriri.jpg" alt="Exu Tiriri">
+            <h3>Exu Tiriri</h3>
+            <p>Reino : Calunga</p>
+            <iframe class="video-container" width="300" height="250" src="xxxxxxxxxxxxxxxxxxxx"
+                title="XXXXXXXXXXXXXXXXXXXXXXXXXX" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="exu-morcego.jpg" alt="Exu Morcego">
+            <h3>Exu Morcego</h3>
+            <p>Reino : Calunga</p>
+            <iframe class="video-container" width="300" height="250" src="xxxxxxxxxxxxxxxxxxx"
+                title="XXXXXXXXXXXXXXXXXXXXXXXXXX" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="quiteria.jpg" alt="Quiteria">
+            <h3>Quiteria</h3>
+            <p>Reino : xxxxxxxxxxxx</p>
+            <iframe class="video-container" width="300" height="250" src="xxxxxxxxxxxxxxxxxxxxx"
+                title="XXXXXXXXXXXXXXXXXXXXXXXXXX" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="exu-ventania.jpg" alt="Exu Ventania">
+            <h3>Exu Ventania</h3>
+            <p>Reino : xxxxxxxxxxxx</p>
+            <iframe class="video-container" width="300" height="250" src="xxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                title="XXXXXXXXXXXXXXXXXXXXXXXXXX" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="tranca-rua-das-7-encruzilhadas.jpg" alt="Exu Tranca Rua das 7 Encruzilhadas">
+            <h3>Exu Tranca Rua das 7 Encruzilhadas</h3>
+            <p>Reino : Encruzilhadas</p>
+            <iframe class="video-container" width="300" height="250" src="xxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                title="XXXXXXXXXXXXXXXXXXXXXXXXXX" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </section>
+
+</body>
+<script src="Script.js"></script>
+
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tenda Ze Baiano</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="logosite.jpg" type="image/jpg" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <main id="posicionamento-principal">
+        <header class="cabecalho">
+            <h1>Bem Vindo a Tenda de Seu Ze Baiano !!</h1>
+        </header>
+
+        <div class="container">
+            <h1 id="form-title">Entre na Tenda</h1>
+            <input type="text" id="username" placeholder="Usuário" />
+            <input type="password" id="password" placeholder="Senha" />
+            <button onclick="handleSubmit()">Entrar</button>
+            <p class="toggle" onclick="toggleForm()">Ainda não tem conta? Cadastre-se</p>
+        </div>
+
+        <footer>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://t.me" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://discord.com" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://youtube.com" target="_blank"><i class="fi fi-brands-youtube"></i></a>
+                <a href="https://web.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2025 Tenda Ze Baiano. Todos os direitos reservados.</p>
+        </footer>
+
+        <!-- Script Principal -->
+        <script>
+            let isLogin = true;
+
+            function toggleForm() {
+                isLogin = !isLogin;
+                document.getElementById("form-title").innerText = isLogin ? "Entre na Tenda!" : "Cadastre-se na Tenda!";
+                document.querySelector("button").innerText = isLogin ? "Entrar" : "Cadastrar";
+                document.querySelector(".toggle").innerText = isLogin ? "Ainda não tem conta? Cadastre-se" : "Já tem conta? Entre";
+            }
+
+            function handleSubmit() {
+                const user = document.getElementById("username").value.trim().toLowerCase();
+                const pass = document.getElementById("password").value.trim();
+
+                if (!user || !pass) return alert("Preencha todos os campos!");
+
+                let usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+
+                if (isLogin) {
+                    if (usuarios[user]) {
+                        if (!usuarios[user].aprovado) return alert("Aguardando aprovação do Pai de Santo.");
+                        if (usuarios[user].senha === pass) {
+                            localStorage.setItem("usuarioLogado", user);
+
+                            // Verifica se há uma página com o nome do usuário
+                            const paginaPessoal = `${user}.html`;
+                            const permissoes = usuarios[user].permissoes || [];
+
+                            if (permissoes.includes(paginaPessoal)) {
+                                window.location.href = paginaPessoal;
+                            } else {
+                                window.location.href = "index.html";
+                                alert("Pagina Inicial não encontrada.");
+                            }
+                        } else {
+                            alert("Senha incorreta.");
+                        }
+                    } else {
+                        alert("Usuário não encontrado.");
+                    }
+                } else {
+                    if (usuarios[user]) return alert("Usuário já cadastrado.");
+                    usuarios[user] = { senha: pass, aprovado: false, permissoes: [] };
+                    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+                    alert("Cadastro enviado! Aguarde aprovação do Pai de Santo.");
+                    toggleForm();
+                }
+            }
+
+            const permissoesCompletas = [
+                "Orixas.html",
+                "Linhas.html",
+                "Guias.html",
+                "Filhos.html",
+                "Pontos.html",
+                "Banhos.html",
+                "Historia.html",
+                "conhecimentos.html",
+                "stefanie.html",
+                "lino.html",
+                "gordo.html",
+                "andre.html",
+                "joao.html",
+                "joaozinho.html",
+                "markos.html",
+                "liliane.html",
+                "jennifer.html",
+                "rodrigo.html",
+                "admin.html",
+                "logins.html",
+                "logout.html",
+            ];
+
+            const usuariosPadrao = {
+                "admin": {
+                    senha: "1230",
+                    aprovado: true,
+                    permissoes: permissoesCompletas
+                },
+                "rodrigo": {
+                    senha: "1230",
+                    aprovado: true,
+                    permissoes: [
+                        "Orixas.html",
+                        "Linhas.html",
+                        "Guias.html",
+                        "Filhos.html",
+                        "Pontos.html",
+                        "Banhos.html",
+                        "Historia.html",
+                        "conhecimentos.html",
+                        "rodrigo.html",
+                        "logout.html",
+                    ]
+                },
+                "stefanie": {
+                    senha: "1230",
+                    aprovado: true,
+                    permissoes: [
+                        "Orixas.html",
+                        "Linhas.html",
+                        "Guias.html",
+                        "Filhos.html",
+                        "Pontos.html",
+                        "Banhos.html",
+                        "Historia.html",
+                        "conhecimentos.html",
+                        "stefanie.html",
+                        "logout.html",
+                    ]
+                },
+                "lino": {
+                    senha: "1230",
+                    aprovado: true,
+                    permissoes: [
+                        "Orixas.html",
+                        "Linhas.html",
+                        "Guias.html",
+                        "Filhos.html",
+                        "Pontos.html",
+                        "Banhos.html",
+                        "Historia.html",
+                        "conhecimentos.html",
+                        "lino.html",
+                        "logout.html",
+                    ]
+                },
+                "liliane": {
+                    senha: "1230",
+                    aprovado: true,
+                    permissoes: [
+                        "Orixas.html",
+                        "Linhas.html",
+                        "Guias.html",
+                        "Filhos.html",
+                        "Pontos.html",
+                        "Banhos.html",
+                        "Historia.html",
+                        "conhecimentos.html",
+                        "liliane.html",
+                        "logout.html",
+                    ]
+                },
+                "gordo": {
+                    senha: "1230",
+                    aprovado: true,
+                    permissoes: [
+                        "Orixas.html",
+                        "Linhas.html",
+                        "Guias.html",
+                        "Filhos.html",
+                        "Pontos.html",
+                        "Banhos.html",
+                        "Historia.html",
+                        "conhecimentos.html",
+                        "gordo.html",
+                        "logout.html",
+                    ]
+                },
+                "jennifer": {
+                    senha: "1230",
+                    aprovado: true,
+                    permissoes: [
+                        "Orixas.html",
+                        "Linhas.html",
+                        "Guias.html",
+                        "Filhos.html",
+                        "Pontos.html",
+                        "Banhos.html",
+                        "Historia.html",
+                        "conhecimentos.html",
+                        "jennifer.html",
+                        "logout.html",
+                    ]
+                },
+                "markos": {
+                    senha: "1230",
+                    aprovado: true,
+                    permissoes: [
+                        "Orixas.html",
+                        "Linhas.html",
+                        "Guias.html",
+                        "Filhos.html",
+                        "Pontos.html",
+                        "Banhos.html",
+                        "Historia.html",
+                        "conhecimentos.html",
+                        "markos.html",
+                        "logout.html",
+                    ]
+                },
+                "joao": {
+                    senha: "1230",
+                    aprovado: true,
+                    permissoes: [
+                        "Orixas.html",
+                        "Linhas.html",
+                        "Guias.html",
+                        "Filhos.html",
+                        "Pontos.html",
+                        "Banhos.html",
+                        "Historia.html",
+                        "conhecimentos.html",
+                        "joao.html",
+                        "logout.html",
+                    ]
+                },
+                "joaozinho": {
+                    senha: "1230",
+                    aprovado: true,
+                    permissoes: [
+                        "Orixas.html",
+                        "Linhas.html",
+                        "Guias.html",
+                        "Filhos.html",
+                        "Pontos.html",
+                        "Banhos.html",
+                        "Historia.html",
+                        "conhecimentos.html",
+                        "joaozinho.html",
+                        "logout.html",
+                    ]
+                }
+            };
+
+
+            // Inserção inicial se não existir
+            if (!localStorage.getItem("usuarios")) {
+                localStorage.setItem("usuarios", JSON.stringify(usuariosPadrao));
+                console.log("Usuários padrão inseridos no localStorage.");
+            }
+
+        </script>
+    </main>
+</body>
+
+</html>

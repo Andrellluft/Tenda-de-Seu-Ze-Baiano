@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aprovações</title>    
+    <link rel="icon" href="logosite.jpg" type="image/jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div class="cabecalho">
+        <h1 id="bemvindo">Bem-vindo!</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+      <!-- Botão do menu hambúrguer (somente no mobile) -->
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu-navegacao">
+            <a href="Orixas.html">Orixas</a>
+            <a href="Linhas.html">Linhas</a>
+            <a href="Guias.html">Guias</a>
+            <a href="Filhos.html">Filhos</a>
+            <a href="Pontos.html">Pontos</a>
+            <a href="Banhos.html">Banhos</a>
+            <a href="Historia.html">Historia</a>
+            <a href="conhecimentos.html">Conhecimentos</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h1>Gerenciar Usuários</h1>
+        <div id="usuarios-aprovados"></div>
+        <hr>
+        <div id="usuarios-pendentes"></div>
+    </div>
+
+    <script>
+        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+        const aprovados = document.getElementById("usuarios-aprovados");
+        const pendentes = document.getElementById("usuarios-pendentes");
+
+        // Mostrar usuários aprovados
+        aprovados.innerHTML = "<h2>Usuários Aprovados</h2>";
+        for (let [nome, dados] of Object.entries(usuarios)) {
+            if (dados.aprovado) {
+                aprovados.innerHTML += `
+        <div>
+          <strong>${nome}</strong><br>
+          Páginas liberadas: <span>${dados.permissoes.join(", ") || "nenhuma"}</span><br>
+          <button onclick="editarPermissoes('${nome}')">Editar Permissões</button>
+          <button onclick="editarSenha('${nome}')">Alterar Senha</button>
+          <button onclick="excluirUsuario('${nome}')">Excluir Usuário</button>
+          <hr>
+        </div>
+      `;
+            }
+        }
+
+        // Mostrar usuários pendentes
+        pendentes.innerHTML = "<h2>Usuários Pendentes</h2>";
+        for (let [nome, dados] of Object.entries(usuarios)) {
+            if (!dados.aprovado) {
+                pendentes.innerHTML += `
+        <div>
+          <strong>${nome}</strong>
+          <button onclick="aprovar('${nome}')">Aprovar</button>
+          <button onclick="rejeitar('${nome}')">Rejeitar</button>
+          <hr>
+        </div>
+      `;
+            }
+        }
+
+        function aprovar(nome) {
+            let usuarios = JSON.parse(localStorage.getItem("usuarios"));
+            const permissoes = prompt("Quais páginas este usuário pode acessar? (separar por vírgula)", "pagina-central.html,Orixas.html,Linhas-de-Trabalhos.html,Guias-da-casa.html,Filhos.html,Pontos.html,Banhos.html,Historia.html");
+            usuarios[nome].aprovado = true;
+            usuarios[nome].permissoes = permissoes ? permissoes.split(",").map(p => p.trim()) : [];
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
+            alert(`Usuário ${nome} aprovado.`);
+            location.reload();
+        }
+
+        function rejeitar(nome) {
+            let usuarios = JSON.parse(localStorage.getItem("usuarios"));
+            delete usuarios[nome];
+            localStorage.setItem("usuarios", JSON.stringify(usuarios));
+            alert(`Usuário ${nome} rejeitado e removido.`);
+            location.reload();
+        }
+
+        function editarPermissoes(nome) {
+            let usuarios = JSON.parse(localStorage.getItem("usuarios"));
+            const novas = prompt(`Páginas para ${nome}: (separar por vírgula)`, usuarios[nome].permissoes.join(", "));
+            if (novas !== null) {
+                usuarios[nome].permissoes = novas.split(",").map(p => p.trim());
+                localStorage.setItem("usuarios", JSON.stringify(usuarios));
+                alert("Permissões atualizadas!");
+                location.reload();
+            }
+        }
+
+        function editarSenha(nome) {
+            let usuarios = JSON.parse(localStorage.getItem("usuarios"));
+            const novaSenha = prompt(`Nova senha para o usuário ${nome}:`);
+            if (novaSenha !== null && novaSenha.length > 0) {
+                usuarios[nome].senha = novaSenha;
+                localStorage.setItem("usuarios", JSON.stringify(usuarios));
+                alert("Senha alterada com sucesso!");
+            }
+        }
+
+        function excluirUsuario(nome) {
+            if (confirm(`Deseja realmente excluir o usuário ${nome}?`)) {
+                let usuarios = JSON.parse(localStorage.getItem("usuarios"));
+                delete usuarios[nome];
+                localStorage.setItem("usuarios", JSON.stringify(usuarios));
+                alert(`Usuário ${nome} foi removido.`);
+                location.reload();
+            }
+        }
+    </script>
+
+</body>
+<script src="Script.js"></script>
+
+</html>

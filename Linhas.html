@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linhas de Trabalhos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logosite.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        const user = localStorage.getItem("usuarioLogado");
+        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+        const pagina = location.pathname.split("/").pop();
+
+        if (!user || !usuarios[user] || !usuarios[user].aprovado || !usuarios[user].permissoes.includes(pagina)) {
+            alert("Acesso negado!");
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <div class="cabecalho">
+        <h1>Linhas de Trabalhos!!</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu-navegacao">
+            <a href="Orixas.html">Orixas</a>
+            <a href="Linhas.html">Linhas</a>
+            <a href="Guias.html">Guias</a>
+            <a href="Filhos.html">Filhos</a>
+            <a href="Pontos.html">Pontos</a>
+            <a href="Banhos.html">Banhos</a>
+            <a href="Historia.html">Historia</a>
+            <a href="conhecimentos.html">Conhecimentos</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </div>
+
+    <section class="card-container">
+        <div class="card" data-tipo="linhas_de_trabalhos" data-nome="Mestres"
+            data-energia="&lt;/p&gt;Elevada, sábia&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-funcao_espiritual="&lt;/p&gt;Cura, orientação, magia, ensino espiritual&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-cores="&lt;/p&gt;Branco, Roxo, Azul&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-ponto_de_forca="&lt;/p&gt;Mata, altar, serra&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-oferendas="&lt;/p&gt;Vinho, jurema, cachimbo, flores&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-saudacao="&lt;/p&gt;Salve os Mestres da Jurema!&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-dias_da_semana="&lt;/p&gt;Segunda ou Domingo&lt;/p&gt;" data-img="mestre.jpg">
+            <img src="mestre-02.jpg" alt="Mestres">
+            <h3>Mestres</h3>
+            <h5>Mestre Zé Pelintra,Mestre Severino, Mestre Nagô</h5>
+            <p>Representa os grandes sábios da Jurema; guias espirituais iluminados.</p>
+        </div>
+
+        <div class="card" data-tipo="linhas_de_trabalhos" data-nome="Caboclos"
+            data-energia="&lt;/p&gt;Forte, firme, natural&lt;/p&gt; &lt;/p&gt;*********&lt;/p&gt;"
+            data-funcao_espiritual="&lt;/p&gt;Cura, proteção, força ancestral, ligação com a natureza&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-cores="&lt;/p&gt;Verde, Vermelho&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-ponto_de_forca="&lt;/p&gt;Mata, montanha, cachoeira&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-oferendas="&lt;/p&gt;Frutas, charuto, cocada&lt;/p&gt; &lt;/p&gt;***********&lt;/p&gt;"
+            data-saudacao="&lt;/p&gt;Okê Arô Caboclo!&lt;/p&gt; &lt;/p&gt;***********&lt;/p&gt;"
+            data-dias_da_semana="&lt;/p&gt;Terça-feira&lt;/p&gt;" data-img="cablocos.jpg">
+            <img src="cablocos.jpg" alt="Caboclos">
+            <h3>Caboclos</h3>
+            <h5>Caboclo Pena Branca, Caboclo Juremá, Cabocla Jandira</h5>
+            <p>Espíritos indígenas, guardiões da floresta e da medicina natural.</p>
+        </div>
+
+        <div class="card" data-tipo="linhas_de_trabalhos" data-nome="Exus"
+            data-energia="&lt;/p&gt;Direta, intensa, justa&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-funcao_espiritual="&lt;/p&gt;Abertura de caminhos, proteção, justiça, desmanche de demanda&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-cores="&lt;/p&gt;Preto, Vermelho, Preto-Vermelho&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-ponto_de_forca="&lt;/p&gt;Encruzilhada, estrada, cemitério&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-oferendas="&lt;/p&gt;Cachaça, farofa, charuto, vela vermelha/preta&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-saudacao="&lt;/p&gt;Laroyê Exu!&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-dias_da_semana="&lt;/p&gt;Segunda-feira&lt;/p&gt;" data-img="exu.jpg">
+            <img src="exu.jpg" alt="Exus">
+            <h3>Exus</h3>
+            <h5>Exu Maré, Exu Tranca Tudo, Exu do Ouro</h5>
+            <p>Guardiões da espiritualidade e mensageiros; diferentes dos Exus da Umbanda.</p>
+        </div>
+
+        <div class="card" data-tipo="linhas_de_trabalhos" data-nome="Pombas Giras"
+            data-energia="&lt;/p&gt;Feminina, livre, sensual&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-funcao_espiritual="&lt;/p&gt;Amor, autoestima, libertação emocional, justiça&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-cores="&lt;/p&gt;Vermelho, Preto, Vermelho-Preto, Dourado&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-ponto_de_forca="&lt;/p&gt;Encruzilhadas em T, praças, jardins&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-oferendas="&lt;/p&gt;Champanhe, rosas, perfume, cigarro, vela vermelha ou rosa&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-saudacao="&lt;/p&gt;Laroyê Pomba Gira!&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-dias_da_semana="&lt;/p&gt;Segunda-feira&lt;/p&gt;" data-img="pombagira-menina.jpg">
+            <img src="pombagira-menina.jpg" alt="Pombas Giras">
+            <h3>Pombas Giras</h3>
+            <h5>Maria Mulambo, Rosa Caveira, Cigana das Almas, Dama da Noite.</h5>
+            <p>É uma entidade feminina de grande força espiritual, geralmente ligada à linha de trabalho dos Exus, mas
+                com sua atuação própria e distinta.</p>
+        </div>
+
+        <div class="card" data-tipo="linhas_de_trabalhos" data-nome="Pretos Velhos"
+            data-energia="&lt;/p&gt;Doce, ancestral, amorosa&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-funcao_espiritual="&lt;/p&gt;Cura, aconselhamento, paciência, humildade&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-cores="&lt;/p&gt;Branco, Preto-Branco&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-ponto_de_forca="&lt;/p&gt;Tronqueira, toco de árvore, chão batido&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-oferendas="&lt;/p&gt;Café, fumo de rolo, pipoca, vela branca&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-saudacao="&lt;/p&gt;Adorei as Almas!&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-dias_da_semana="&lt;/p&gt;Segunda-feira&lt;/p&gt;" data-img="pretos-velhos.jpg">
+            <img src="pretos-velhos.jpg" alt="Pretos Velhos">
+            <h3>Pretos Velhos</h3>
+            <h5>Pai Joaquim, Vó Cambinda, Pai Benedito</h5>
+            <p>Espíritos ancestrais africanos que trabalham com humildade e sabedoria.</p>
+        </div>
+
+        <div class="card" data-tipo="linhas_de_trabalhos" data-nome="Marinheiros"
+            data-energia="&lt;/p&gt;Flexível, equilibrada&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-funcao_espiritual="&lt;/p&gt;Limpeza emocional, movimentação de energia, leveza&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-cores="&lt;/p&gt;Azul, Branco, Branco-Azul&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-ponto_de_forca="&lt;/p&gt;Beira-mar, cais, rios, portos&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-oferendas="&lt;/p&gt;Rum, vinho branco, cigarro, vela azul&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-saudacao="&lt;/p&gt;Salve a Marujada!&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-dias_da_semana="&lt;/p&gt;Quinta-feira&lt;/p&gt;" data-img="marinheiro-02.jpg">
+            <img src="marinheiro.jpg" alt="Marinheiros">
+            <h3>Marinheiros</h3>
+            <h5>Marinheiro José, Marinheiro Sete Ondas</h5>
+            <p>Entidades ligadas às águas, à navegação e ao movimento espiritual.</p>
+        </div>
+
+        <div class="card" data-tipo="linhas_de_trabalhos" data-nome="Crianças (Erês)"
+            data-energia="&lt;/p&gt;Pura, leve, alegre&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-funcao_espiritual="&lt;/p&gt;Cura da infância, proteção, alegria espiritual&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-cores="&lt;/p&gt;Azul, Rosa, Branco&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-ponto_de_forca="&lt;/p&gt;Jardim, praça, beira de rio&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-oferendas="&lt;/p&gt;Doces, balas, guaraná, brinquedos, vela colorida&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-saudacao="&lt;/p&gt;Oni Ibejada!&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-dias_da_semana="&lt;/p&gt;Domingo&lt;/p&gt;" data-img="eres.jpg">
+            <img src="eres.jpg" alt="Crianças (Erês)">
+            <h3>Crianças (Erês)</h3>
+            <h5>Cosme, Damião, Doum (em sincretismo)</h5>
+            <p>Espíritos puros que representam alegria, inocência e proteção.</p>
+        </div>
+
+        <div class="card" data-tipo="linhas_de_trabalhos" data-nome="Malandros"
+            data-energia="&lt;/p&gt;Urbana, malandra, justa&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-funcao_espiritual="&lt;/p&gt;Solução de conflitos, abertura de caminhos, sabedoria popular&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-cores="&lt;/p&gt;Branco, Vermelho, Preto, Branco-Vermelho&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-ponto_de_forca="&lt;/p&gt;Esquinas, bares, encruzilhadas urbanas&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-oferendas="&lt;/p&gt;Cerveja, batida, cigarro, chapéu, frutas&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-saudacao="&lt;/p&gt;Salve a Malandragem!&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-dias_da_semana="&lt;/p&gt;Sexta ou Quarta-feira&lt;/p&gt;" data-img="malandra.jpg">
+            <img src="malandro.jpg" alt="Malandros">
+            <h3>Malandros</h3>
+            <h5>Zé Pelintra, Zé Malandro, Zé do Morro</h5>
+            <p>Guias que atuam na astúcia, abertura de caminhos e resolução de conflitos.</p>
+        </div>
+
+        <div class="card" data-tipo="linhas_de_trabalhos" data-nome="Ciganos"
+            data-energia="&lt;/p&gt;Livre, mágica, intuitiva&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-funcao_espiritual="&lt;/p&gt;Oráculos, magia, prosperidade, liberdade&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-cores="&lt;/p&gt;Roxo, Dourado, Vermelho&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-ponto_de_forca="&lt;/p&gt;Campina, trilhas, estrada&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-oferendas="&lt;/p&gt;Vinho, frutas, moedas, lenço, pandeiro, incenso&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-saudacao="&lt;/p&gt;Opchá! Salve o Povo Cigano!&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-dias_da_semana="&lt;/p&gt;Quinta-feira&lt;/p&gt;" data-img="ciganos.jpg">
+            <img src="ciganos.jpg" alt="Ciganos">
+            <h3>Ciganos</h3>
+            <h5>Cigano Pablo, Cigana Sarita, Cigana Esmeralda</h5>
+            <p>Espíritos livres ligados à arte, oráculos, dança e magia cigana.</p>
+        </div>
+
+        <div class="card" data-tipo="linhas_de_trabalhos" data-nome="Exus Mirins"
+            data-energia="&lt;/p&gt;Travessa, ousada, profunda&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-funcao_espiritual="&lt;/p&gt;Quebra de demandas sutis, libertação de traumas, agilidade&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-cores="&lt;/p&gt;Preto, Vermelho, Branco, Preto-Vermelho&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-ponto_de_forca="&lt;/p&gt;Encruzilhadas, becos, cantos&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-oferendas="&lt;/p&gt;Balas de pinga, mini garrafa de cachaça, vela preta/vermelha&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-saudacao="&lt;/p&gt;Laroyê Exu Mirim!&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-dias_da_semana="&lt;/p&gt;Segunda-feira&lt;/p&gt;" data-img="exu-mirim.jpg">
+            <img src="exu-mirim.jpg" alt="Exus Mirins">
+            <h3>Exus Mirins</h3>
+            <h5>Exu Mirim da Meia-Noite, Exu Mirim Capa Preta.</h5>
+            <p>É uma entidade espiritual que manifesta-se com forma e energia de criança travessa, mas é um espírito
+                sábio e antigo.</p>
+        </div>
+
+        <div class="card" data-tipo="linhas_de_trabalhos" data-nome="Pomba Gira Mirim"
+            data-energia="&lt;/p&gt;Jovem, intuitiva, brincalhona&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-funcao_espiritual="&lt;/p&gt;Cura da criança ferida, autoestima feminina, leveza afetiva&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-cores="&lt;/p&gt;Preto, Vermelho, Branco, Preto-Vermelho&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-ponto_de_forca="&lt;/p&gt;Praça, jardim, canto de encruzilhada&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-oferendas="&lt;/p&gt;Doces, mini perfumes, rosas, velas cor-de-rosa&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-saudacao="&lt;/p&gt;Laroyê Pomba Gira Mirim!&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-dias_da_semana="&lt;/p&gt;Segunda-feira&lt;/p&gt;" data-img="pomba-gira-mirim.jpg">
+            <img src="pomba-gira-mirim.jpg" alt="Pomba Gira Mirim">
+            <h3>Pomba Gira Mirim</h3>
+            <h5>Pomba Gira Mirim das Rosas, Mariazinha das Sete Rosas.</h5>
+            <p>É a contraparte feminina do Exu Mirim, com energia de menina ou adolescente.</p>
+        </div>
+
+        <div class="card" data-tipo="linhas_de_trabalhos" data-nome="Baianos" data-energia="Alegre, astuta, firme"
+            data-funcao_espiritual="&lt;/p&gt;Quebra de demandas, abertura de caminhos, sabedoria popular, proteção&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-cores="&lt;/p&gt;Branco, Vermelho, Azul&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-ponto_de_forca="&lt;/p&gt;Cruzeiros, praças, esquinas, pedreiras&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-oferendas="&lt;/p&gt;Acarajé, farofa de dendê, pimenta, cachaça, vela branca/vermelha&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-saudacao="&lt;/p&gt;Salve a Bahia Meu Pai!&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-dias_da_semana="&lt;/p&gt;Segunda-feira&lt;/p&gt;" data-img="baianos.jpg">
+            <img src="baianos.jpg" alt="Baianos">
+            <h3>Baianos</h3>
+            <h5>Nomes de Baianos.</h5>
+            <p>Representam os espíritos do povo nordestino, especialmente da Bahia, que têm forte ligação com o
+                sincretismo, o candomblé e a sabedoria das ruas.</p>
+        </div>
+
+        <div class="card" data-tipo="linhas_de_trabalhos" data-nome="Boiadeiros"
+            data-energia="&lt;/p&gt;Rústica, firme, protetora&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-funcao_espiritual="&lt;/p&gt;Limpeza espiritual, corte de feitiço, firmeza, condução de espíritos&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-cores="&lt;/p&gt;Marrom, Bege, Branco, Azul&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-ponto_de_forca="&lt;/p&gt;Pastos, campos, pedreiras, porteiras&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-oferendas="&lt;/p&gt;Queijo, cachaça, fumo de rolo, laço, vela branca ou marrom, couro, ferraduras&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-saudacao="&lt;/p&gt;oh/Arroi Boi!&lt;/p&gt; &lt;/p&gt;**********&lt;/p&gt;"
+            data-dias_da_semana="&lt;/p&gt;Segunda-feira&lt;/p&gt;" data-img="boiadeiro.jpg">
+            <img src="boiadeiro-02.jpg" alt="Boiadeiros">
+            <h3>Boiadeiros</h3>
+            <h5>Nomes de Boiadeiros.</h5>
+            <p>Espíritos ligados às lidas do campo, da boiada, dos sertões. Lembram vaqueiros, peões, tropeiros.</p>
+        </div>
+
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+            <!-- Conteúdo gerado dinamicamente -->
+        </div>
+    </div>
+
+</body>
+<script src="Script.js"></script>
+
+</html>

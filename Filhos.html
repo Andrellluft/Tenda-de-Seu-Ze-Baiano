@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filhos da Tenda</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logosite.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        const user = localStorage.getItem("usuarioLogado");
+        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+        const pagina = location.pathname.split("/").pop();
+
+        if (!user || !usuarios[user] || !usuarios[user].aprovado || !usuarios[user].permissoes.includes(pagina)) {
+            alert("Acesso negado!");
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <div class="cabecalho">
+        <h1>Filhos da Tenda</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu-navegacao">
+            <a href="Orixas.html">Orixas</a>
+            <a href="Linhas.html">Linhas</a>
+            <a href="Guias.html">Guias</a>
+            <a href="Filhos.html">Filhos</a>
+            <a href="Pontos.html">Pontos</a>
+            <a href="Banhos.html">Banhos</a>
+            <a href="Historia.html">Historia</a>
+            <a href="conhecimentos.html">Conhecimentos</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </div>
+
+    <section class="card-container">
+
+        <div class="card" data-tipo="markos" data-nome="Markos" data-tempo_de_casa="7 Anos" 
+            data-buzios="Sim" data-orixa_de_frente="Ogum Beira-mar" data-orixa_de_costas="Iemanja"
+            data-orixa_de_enredo="Obaluaie" data-mestre="Nao" data-cablocos="Tupinamba" data-almas="Vó Catarina"
+            data-ibejada="XXXXXXXXXX" data-esquerda="Tranca Rua das Almas - Pomba Gira Menina do Cabaré"
+            data-obrigacoes="XXXXXXXXXX" data-img="markos.png" class="icon top-icon">
+            <img src="markos.png" alt="Markos">
+            <h3>Markos</h3>
+            <h5>Cargo: Cambone</h5>
+            <p>Auxilia os Guias na Hora da Incorporação.</p>
+        </div>
+
+        <div class="card" data-tipo="liliane" data-nome="Liliane" data-tempo_de_casa="5 Anos" 
+            data-buzios="XXXXXXXXXX" data-orixa_de_frente="Oxum" data-orixa_de_costas="XXXXXXXXXX"
+            data-orixa_de_enredo="XXXXXXXXXX" data-mestre="XXXXXXXXXX" data-cablocos="XXXXXXXXXX"
+            data-almas="XXXXXXXXXX" data-ibejada="XXXXXXXXXX" data-esquerda="Exu Ventania - Navalha do Cais"
+            data-obrigacoes="Janeiro-2025" data-img="liliane.png" class="icon top-icon">
+            <img src="liliane.png" alt="Liliane">
+            <h3>Liliane</h3>
+            <h5>Cargo: Médium</h5>
+            <p>Atendimento com Incorporação.</p>
+        </div>
+
+        <div class="card" data-tipo="stefanie" data-nome="Stefanie" data-tempo_de_casa="6 Anos" 
+            data-buzios="Sim" data-orixa_de_frente="Iemanja" data-orixa_de_costas="Xangô" data-orixa_de_enredo="Ossain"
+            data-mestre="Cigana Esmeralda" data-cablocos="XXXXXXXXXX" data-almas="Vovó Cambinda" data-ibejada="Ritinha"
+            data-esquerda="Exu das Matas - XXXXXXXXXX" data-obrigacoes="Janeiro-2025" data-img="stefanie.png"
+            class="icon top-icon">
+            <img src="stefanie.png" alt="Stefanie">
+            <h3>Stefanie</h3>
+            <h5>Cargo: Médium</h5>
+            <p>Atendimento com Incorporação.</p>
+        </div>
+
+        <div class="card" data-tipo="andre" data-nome="André" data-tempo_de_casa="6 Anos" 
+            data-buzios="Sim" data-orixa_de_frente="Obaluaie" data-orixa_de_costas="Nanã" data-orixa_de_enredo="Iemanja"
+            data-mestre="Pilão Deitado" data-cablocos="XXXXXXXXXX" data-almas="Pai Mané" data-ibejada="Luizinho"
+            data-esquerda="Caveira - Rosa Caveira" data-obrigacoes="Janeiro-2025" data-img="andre.png"
+            class="icon top-icon">
+            <img src="andre.png" alt="André">
+            <h3>André</h3>
+            <h5>Cargo: Médium - Mão de Corte</h5>
+            <p>Atendimento com Incorporação e Corte das Oferendas.</p>
+        </div>
+
+        <div class="card" data-tipo="lino" data-nome="Lino" data-tempo_de_casa="Inicio em Junho-2025" 
+            data-buzios="XXXXXXXXXX" data-orixa_de_frente="Xangô" data-orixa_de_costas="Iemanja"
+            data-orixa_de_enredo="XXXXXXXXXX" data-mestre="XXXXXXXXXX" data-cablocos="XXXXXXXXXX"
+            data-almas="XXXXXXXXXX" data-ibejada="XXXXXXXXXX" data-esquerda="Exu Mare - XXXXXXXXXX"
+            data-obrigacoes="XXXXXXXXXX" data-img="lino.png" class="icon top-icon">
+            <img src="lino.png" alt="Lino">
+            <h3>Lino</h3>
+            <h5>Cargo: Médium</h5>
+            <p>Atendimento com Incorporação.</p>
+        </div>
+
+        <div class="card" data-tipo="benca" data-nome="João Bença" data-tempo_de_casa="Inicio em Junho-2025" 
+            data-buzios="XXXXXXXXXX" data-orixa_de_frente="Oxossi" data-orixa_de_costas="Iemanja"
+            data-orixa_de_enredo="XXXXXXXXXX" data-mestre="XXXXXXXXXX" data-cablocos="XXXXXXXXXX"
+            data-almas="XXXXXXXXXX" data-ibejada="XXXXXXXXXX" data-esquerda="Mirim Caveirinha - XXXXXXXXXX"
+            data-obrigacoes="XXXXXXXXXX" data-img="benca.png" class="icon top-icon">
+            <img src="benca.png" alt="João Bença">
+            <h3>João Bença</h3>
+            <h5>Cargo: Médium</h5>
+            <p>Atendimento com Incorporação.</p>
+        </div>
+
+        <div class="card" data-tipo="gordo" data-nome="Gordo" data-tempo_de_casa="Inicio em Junho-2025" 
+            data-buzios="XXXXXXXXXX" data-orixa_de_frente="Ogun Mege" data-orixa_de_costas="Oxum"
+            data-orixa_de_enredo="XXXXXXXXXX" data-mestre="XXXXXXXXXX" data-cablocos="XXXXXXXXXX"
+            data-almas="XXXXXXXXXX" data-ibejada="XXXXXXXXXX" data-esquerda="Exu Tiriri - XXXXXXXXXX"
+            data-obrigacoes="XXXXXXXXXX" data-img="gordo.png" class="icon top-icon">
+            <img src="gordo.png" alt="Gordo">
+            <h3>Gordo</h3>
+            <h5>Cargo: Médium</h5>
+            <p>Atendimento com Incorporação.</p>
+        </div>
+
+        <div class="card" data-tipo="jennifer" data-nome="Jennifer" data-tempo_de_casa="Inicio em Junho-2025"
+            data-buzios="XXXXXXXXXX" data-orixa_de_frente="Iansa" data-orixa_de_costas="Oxossi"
+            data-orixa_de_enredo="XXXXXXXXXX" data-mestre="XXXXXXXXXX" data-cablocos="XXXXXXXXXX"
+            data-almas="XXXXXXXXXX" data-ibejada="XXXXXXXXXX" data-esquerda="Exu Morcego - Maria Quitéria"
+            data-obrigacoes="XXXXXXXXXX" data-img="jennifer.png" class="icon top-icon">
+            <img src="jennifer.png" alt="Jennifer">
+            <h3>Jennifer</h3>
+            <h5>Cargo: Médium</h5>
+            <p>Atendimento com Incorporação.</p>
+        </div>
+
+        <div class="card" data-tipo="joao" data-nome="João" data-tempo_de_casa="Inicio em Junho-2025" 
+            data-buzios="XXXXXXXXXX" data-orixa_de_frente="Exu 'Obara'" data-orixa_de_costas="Iemanja"
+            data-orixa_de_enredo="XXXXXXXXXX" data-mestre="XXXXXXXXXX" data-cablocos="XXXXXXXXXX"
+            data-almas="XXXXXXXXXX" data-ibejada="XXXXXXXXXX"
+            data-esquerda="Tranca Rua das 7 Encruzilhadas - XXXXXXXXXX" data-obrigacoes="XXXXXXXXXX"
+            data-img="joao.png" class="icon top-icon">
+            <img src="joao.png" alt="João">
+            <h3>João</h3>
+            <h5>Cargo: Médium</h5>
+            <p>Atendimento com Incorporação.</p>
+        </div>
+
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+            <!-- Conteúdo gerado dinamicamente -->
+        </div>
+    </div>
+
+</body>
+<script src="Script.js"></script>
+
+</html>

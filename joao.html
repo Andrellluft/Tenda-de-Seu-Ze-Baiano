@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joao</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logosite.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cabecalho">
+        <h1 id="bemvindo">Bem-vindo!</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu-nav"></nav>
+    </div>
+
+    <script>
+        const usuarioLogado = localStorage.getItem("usuarioLogado");
+        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+        const pagina = location.pathname.split("/").pop();
+        const dados = usuarios[usuarioLogado];
+
+        if (!usuarioLogado || !dados || !dados.aprovado || !dados.permissoes.includes(pagina)) {
+            alert("Acesso negado!");
+            location.href = "index.html";
+        }
+
+        document.getElementById("bemvindo").innerText = `Bem-vindo(a)!! ${usuarioLogado}`;
+
+        const menuNav = document.getElementById("menu-nav");
+        dados.permissoes.forEach(pagina => {
+            const nomePagina = pagina.replace(".html", "")
+                .replace(/-/g, " ")
+                .replace(/\b\w/g, l => l.toUpperCase());
+            const link = document.createElement("a");
+            link.href = pagina;
+            link.innerText = nomePagina;
+            menuNav.appendChild(link);
+        });
+
+        function logout() {
+            localStorage.removeItem("usuarioLogado");
+            location.href = "index.html";
+        }
+    </script>
+
+    <section class="card-container">
+
+        <div class="card" data-tipo="joao" data-nome="João" data-tempo_de_casa="Inicio em Junho-2025" 
+            data-buzios="XXXXXXXXXX" data-orixa_de_frente="Exu 'Obara'" data-orixa_de_costas="Iemanja"
+            data-orixa_de_enredo="XXXXXXXXXX" data-mestre="XXXXXXXXXX" data-cablocos="XXXXXXXXXX"
+            data-almas="XXXXXXXXXX" data-ibejada="XXXXXXXXXX"
+            data-esquerda="Tranca Rua das 7 Encruzilhadas - XXXXXXXXXX" data-obrigacoes="XXXXXXXXXX"
+            data-img="joao.png" class="icon top-icon">
+            <img src="joao.png" alt="João">
+            <h3>João</h3>
+            <h5>Cargo: Médium</h5>
+            <p>Atendimento com Incorporação.</p>
+        </div>
+
+    </section>
+
+    <section class="card-container">
+
+        <div class="card">
+            <img src="tranca-rua-das-7-encruzilhadas.jpg" alt="Exu Tranca Rua das 7 Encruzilhadas">
+            <h3>Exu Tranca Rua das 7 Encruzilhadas</h3>
+            <p>Reino : Encruzilhadas</p>
+            <iframe class="video-container" width="300" height="250" src="xxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                title="XXXXXXXXXXXXXXXXXXXXXXXXXX" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Yemanjá" data-ataque="300" data-defesa="150" data-poder="Gelo"
+            data-ataque="110" data-defesa="60" data-img="iemanja.jpg">
+            <img src="pin-iemanja.jpg" alt="Yemanjá">
+            <h3>Yemanjá</h3>
+            <h5>Trono : Geração e Vida</h5>
+            <p>Criação, ciclos da vida, equilíbrio dos planos.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/BjgGuQGVeoM?si=jgnIrkUf4GjEhO27" title="Hoje eu vou cantar!"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Exu" data-ataque="110" data-defesa="60" data-poder="Normal"
+            data-ataque="110" data-defesa="60" data-img="exu.jpg">
+            <img src="pin-exu.jpg" alt="Exu">
+            <h3>Exu</h3>
+            <h5>Trono : Movimento</h5>
+            <p>Abertura de caminhos, comunicação, desejo, ação, fluidez.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/EKSilNQPUfI?si=ACIdjQAkxz-FL1hN" title="Exu É Quem Abre os Caminhos"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+    </section>
+
+    <div class="container">
+        <hr>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+        </div>
+    </div>
+</body>
+<script src="Script.js"></script>
+
+</html>

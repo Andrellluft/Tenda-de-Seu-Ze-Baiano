@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zé Baiano</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logosite.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        const user = localStorage.getItem("usuarioLogado");
+        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+        const pagina = location.pathname.split("/").pop();
+
+        if (!user || !usuarios[user] || !usuarios[user].aprovado || !usuarios[user].permissoes.includes(pagina)) {
+            alert("Acesso negado!");
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <div class="cabecalho">
+        <h1>Historia Seu Zé Baiano !!</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu-navegacao">
+            <a href="Orixas.html">Orixas</a>
+            <a href="Linhas.html">Linhas</a>
+            <a href="Guias.html">Guias</a>
+            <a href="Filhos.html">Filhos</a>
+            <a href="Pontos.html">Pontos</a>
+            <a href="Banhos.html">Banhos</a>
+            <a href="Historia.html">Historia</a>
+            <a href="conhecimentos.html">Conhecimentos</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </div>
+
+    </section>
+    <section id="texto-principal">
+        <h1>História do Mestre Zé Baiano.</h1>
+        <div class="textos">
+
+            <div>
+                <p>🌵 Um filho do sertão</p>
+                <p>
+                    Zé Baiano teria vivido entre o final do século XIX e início do século XX, nos sertões entre Bahia e
+                    Pernambuco,
+                    em uma região marcada por secas, coronelismo, injustiças sociais e misticismo popular.
+                    Ele nasceu em uma família humilde, descendente de negros escravizados e índios.
+                    Desde pequeno, conviveu com a natureza, com os animais e com os elementos da terra seca e forte do
+                    sertão nordestino.
+                    Era vaqueiro desde jovem, trabalhando em fazendas para manter a própria família.
+                </p>
+            </div>
+
+            <div>
+                <p>🧠 Um homem de sabedoria e mistério</p>
+                <p>
+                    Mesmo sem instrução formal, Zé Baiano era muito inteligente e observador.
+                    Aprendeu com os mais velhos a reconhecer ervas, curar feridas, lidar com espíritos, e fazer
+                    simpatias de proteção.
+                    Ele era respeitado como um “benzedor” e homem de fé”.
+                    Alguns relatos contam que ele aprendeu diretamente com índios Juremeiros e Pajés, se tornando um
+                    conhecedor profundo da força da Jurema-preta, do Jucá, da Imburana, da aroeira e das rezas cantadas
+                    no pé da mata.
+                </p>
+            </div>
+
+            <div>
+                <p>⚔️ Protetor dos fracos</p>
+                <p>
+                    Zé Baiano ficou conhecido como defensor do povo pobre, especialmente mulheres vítimas de abuso,
+                    retirantes famintos, e vaqueiros explorados.
+                    Era conhecido por enfrentar poderosos, coronéis violentos e seus jagunços.
+                    Ele andava com seu gibão de couro, chapéu aba larga e uma peixeira (faca) presa à cintura. Mas nunca
+                    atacava sem necessidade. A peixeira era seu símbolo de proteção e justiça. Quando precisava,
+                    resolvia no braço ou com sabedoria, sem derramamento de sangue.
+                </p>
+            </div>
+
+            <div>
+                <p>☠️ A morte do homem, o nascimento do Mestre</p>
+                <p>
+                    Conta-se que Zé Baiano foi traído por alguém de confiança, a mando de um coronel que o odiava.
+                    Foi emboscado em uma estrada de barro, ao entardecer, próximo a um riacho seco.
+                    Mesmo ferido, lutou com bravura, e antes de morrer, olhou para o céu e disse que ainda voltaria para
+                    defender o povo.
+                    Após sua morte, moradores da região começaram a sonhar com ele, ouvir seu cavalo à noite, sentir sua
+                    presença nas matas.
+                    Ele apareceu para benzedeiras, curandeiros e rezadores, dizendo que havia se tornado Mestre da
+                    Jurema, e que agora trabalharia “do lado de lá” para continuar sua missão.
+                </p>
+            </div>
+
+            <div>
+                <p>🌿 Tornando-se Mestre Zé Baiano</p>
+                <p>
+                    Na espiritualidade, ele foi acolhido pela Linha dos Mestres Encantados da Jurema Sagrada. Se tornou
+                    um guia respeitado, forte, sábio e justo.
+                    Trabalha com médiums sérios, ensinando cura com folhas, firmezas de chão, proteção contra
+                    feitiçaria, corte de demandas, força para quem luta pela justiça.
+                    Hoje, em muitas tendas e cidades do Nordeste e Sudeste, Seu Zé Baiano se apresenta em sessões de
+                    Jurema, com a mesma postura firme, fumo aceso e olhar penetrante.
+                    Ele ainda fala com sotaque arrastado e voz forte. E sempre termina sua consulta com um aviso:
+                </p>
+            </div>
+
+            <p class="frase">“Seja justo com o mundo, pra que o mundo não seja injusto com você.”</p>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+            <!-- Conteúdo gerado dinamicamente -->
+        </div>
+    </div>
+
+</body>
+<script src="Script.js"></script>
+
+</html>

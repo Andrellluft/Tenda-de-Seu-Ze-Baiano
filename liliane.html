@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liliane</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logosite.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cabecalho">
+        <h1 id="bemvindo">Bem-vindo!</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu-nav"></nav>
+    </div>
+
+    <script>
+        const usuarioLogado = localStorage.getItem("usuarioLogado");
+        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+        const pagina = location.pathname.split("/").pop();
+        const dados = usuarios[usuarioLogado];
+
+        if (!usuarioLogado || !dados || !dados.aprovado || !dados.permissoes.includes(pagina)) {
+            alert("Acesso negado!");
+            location.href = "index.html";
+        }
+
+        document.getElementById("bemvindo").innerText = `Bem-vindo(a)!! ${usuarioLogado}`;
+
+        const menuNav = document.getElementById("menu-nav");
+        dados.permissoes.forEach(pagina => {
+            const nomePagina = pagina.replace(".html", "")
+                .replace(/-/g, " ")
+                .replace(/\b\w/g, l => l.toUpperCase());
+            const link = document.createElement("a");
+            link.href = pagina;
+            link.innerText = nomePagina;
+            menuNav.appendChild(link);
+        });
+
+        function logout() {
+            localStorage.removeItem("usuarioLogado");
+            location.href = "index.html";
+        }
+    </script>
+
+    <section class="card-container">
+
+        <div class="card" data-tipo="liliane" data-nome="Liliane" data-tempo_de_casa="5 Anos" 
+            data-buzios="XXXXXXXXXX" data-orixa_de_frente="Oxum" data-orixa_de_costas="XXXXXXXXXX"
+            data-orixa_de_enredo="XXXXXXXXXX" data-mestre="XXXXXXXXXX" data-cablocos="XXXXXXXXXX"
+            data-almas="XXXXXXXXXX" data-ibejada="XXXXXXXXXX" data-esquerda="Exu Ventania - Navalha do Cais"
+            data-obrigacoes="Janeiro-2025" data-img="liliane.png" class="icon top-icon">
+            <img src="liliane.png" alt="Liliane">
+            <h3>Liliane</h3>
+            <h5>Cargo: Médium</h5>
+            <p>Atendimento com Incorporação.</p>
+        </div>
+    </section>
+
+    <section class="card-container">
+
+        <div class="card">
+            <img src="exu-ventania.jpg" alt="Exu Ventania">
+            <h3>Exu Ventania</h3>
+            <p>Reino : xxxxxxxxxxxx</p>
+            <iframe class="video-container" width="300" height="250" src="xxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                title="XXXXXXXXXXXXXXXXXXXXXXXXXX" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Oxum" data-ataque="110" data-defesa="60" data-poder="Normal"
+            data-ataque="110" data-defesa="60" data-img="oxum.jpg">
+            <img src="pin-oxum.jpg" alt="Oxum">
+            <h3>Oxum</h3>
+            <h5>Trono : Amor</h5>
+            <p>Compaixão, beleza, caridade, união e atração.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/WNXj9h0IIGs?si=S3S2QGwgPkCtt5Df"
+                title="EU VÍ MAMÃE OXUM NA CACHOEIRA" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+    </section>
+
+    <div class="container">
+        <hr>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+        </div>
+    </div>
+</body>
+<script src="Script.js"></script>
+
+</html>

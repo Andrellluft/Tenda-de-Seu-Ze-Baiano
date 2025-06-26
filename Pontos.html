@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pontos Cantados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logosite.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        const user = localStorage.getItem("usuarioLogado");
+        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+        const pagina = location.pathname.split("/").pop();
+
+        if (!user || !usuarios[user] || !usuarios[user].aprovado || !usuarios[user].permissoes.includes(pagina)) {
+            alert("Acesso negado!");
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <div class="cabecalho">
+        <h1>Pontos Cantados !!</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu-navegacao">
+            <a href="Orixas.html">Orixas</a>
+            <a href="Linhas.html">Linhas</a>
+            <a href="Guias.html">Guias</a>
+            <a href="Filhos.html">Filhos</a>
+            <a href="Pontos.html">Pontos</a>
+            <a href="Banhos.html">Banhos</a>
+            <a href="Historia.html">Historia</a>
+            <a href="conhecimentos.html">Conhecimentos</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </div>
+
+    <section class="card-container">
+
+        <div class="card" data-tipo="ponto" data-nome="Zé Baiano" data-img="ze-baiano.png" class="icon top-icon"
+            data-nomeponto="Lampião de Vidro:" data-pontotexto="
+            &lt;/p&gt;----------&lt;/p&gt;
+            &lt;/p&gt;            
+                Na Bahia tem, vou mandar buscar,
+            &lt;/p&gt; 
+            &lt;/p&gt;
+                Lampião de vidro, oh sinhá dona, para clarear.
+            &lt;/p&gt;
+            &lt;/p&gt;----------&lt;/p&gt;">
+            <h3>Zé Baiano</h3>
+            <p>Lampião de Vidro</p>
+            <audio controls id="audio">
+                <source src="lampiaodevidro.mp3" type="audio/mp3">
+                Seu navegador não suporta a reprodução de áudio.
+            </audio>
+        </div>
+
+        <div class="card" data-tipo="ponto" data-nome="Exu Veludo" data-img="exu-veludo.jpg" class="icon top-icon"
+            data-nomeponto="Ninguém Pode Comigo:" data-pontotexto="
+            &lt;/p&gt;----------&lt;/p&gt;
+            &lt;/p&gt;
+                Auê Exu,  
+                Ninguém pode comigo,  
+                Eu posso com tudo,  
+                Lá na encruzilhada ele,  
+                É seu Exu Veludo.
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                Ninguém pode comigo,  
+                Eu posso com tudo,  
+                Lá na encruzilhada ele,  
+                É seu Exu Veludo.           
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                Exu veludo é um Exu muito lindo,  
+                Na banda e em qualquer lugar,  
+                Exu veludo bebe seu marafo,  
+                Exu veludo sabe o que faz.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                Quá, quá, quá,  
+                Exu veludo esta na banda,  
+                Ele vem pra trabalhar.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;            
+
+            &lt;/p&gt;
+                Quá, quá, quá,  
+                Exu veludo está na banda,  
+                Deixa ele curiá.
+            &lt;/p&gt;
+            &lt;/p&gt;----------&lt;/p&gt;">
+            <h3>Exu Veludo</h3>
+            <p>Ninguém Pode Comigo</p>
+            <audio controls id="audio">
+                <source src="ninguempodecomigo.mp3" type="audio/mp3">
+                Seu navegador não suporta a reprodução de áudio.
+            </audio>
+        </div>
+
+        <div class="card" data-tipo="ponto" data-nome="Exu Maré" data-img="exu-mare.jpg" class="icon top-icon"
+            data-nomeponto="Maré Maré Maré :" data-pontotexto="
+            &lt;/p&gt;----------&lt;/p&gt;
+            &lt;/p&gt;
+            Maré, Maré, Maré!,
+            Vamos saudar esse Exú de fé. Maré!,  2X
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+            É noite é dia, não tem hora nem lugar,
+            Faça sua prece, peça a ele o que quiser…           
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+            Ao protetor da porteira do Congá,
+            Peça licença quando aqui for entrar,
+            E vai Exú sarava sua Banda,
+            com brasa quente pra vencer toda a demanda.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+            É noite é dia, não tem hora nem lugar,
+            Faça sua prece, peça a ele o que quiser…           
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+            Seus problemas ele vai resolver,
+            Peça a ele o que quer receber,
+            Mas não esqueça que quem semeia vento,
+            colhe tempestade e venha me proteger.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+            Maré, Maré, Maré!,
+            Vamos saudar esse Exú de fé. Maré!,  2X
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;        
+
+            &lt;/p&gt;
+            É noite é dia, não tem hora nem lugar,
+            Faça sua prece, peça a ele o que quiser…
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+            O protetor da porteira do Congá,
+            Peça licença quando aqui for entrar,
+            E vai Exú saravá sua Banda,
+            com brasa quente pra vencer toda a demanda.
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+            Maré, Maré, Maré!,
+            Vamos saudar esse Exú de fé. Maré!  2X
+            &lt;/p&gt;
+            &lt;/p&gt;----------&lt;/p&gt;">
+            <h3>Exu Maré</h3>
+            <p>Maré Maré Maré</p>
+            <audio controls id="audio">
+                <source src="maremaremare.mp3" type="audio/mp3">
+                Seu navegador não suporta a reprodução de áudio.
+            </audio>
+        </div>
+
+        <div class="card" data-tipo="ponto" data-nome="Exu das Matas" data-img="exu-das-matas.jpg" class="icon top-icon"
+            data-nomeponto="Exu da Boca da Mata:" data-pontotexto="
+            &lt;/p&gt;----------&lt;/p&gt;
+            &lt;/p&gt;
+            Exú da Boca da Mata,
+            Oi dá licença, eu preciso passar,  2X
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+            Eu venho saravá a Umbanda,
+            Na aldeia da Juremá,   2X       
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+            Espere uma folha cair, diz Exú,
+            Espere uma ave cantar,
+            Depois você pode seguir que a Jurema,
+            E Oxóssi vão lhe acompanhar.
+            &lt;/p&gt;
+            &lt;/p&gt;----------&lt;/p&gt;">
+            <h3>Exu das Matas</h3>
+            <p>Exu da Boca da Mata</p>
+            <audio controls id="audio">
+                <source src="exudabocadamata.mp3" type="audio/mp3">
+                Seu navegador não suporta a reprodução de áudio.
+            </audio>
+        </div>
+
+        <div class="card" data-tipo="ponto" data-nome="Exu Tiriri" data-img="exu-tiriri.jpg" class="icon top-icon"
+            data-nomeponto="Festa do Exú Tiriri :" data-pontotexto="
+            &lt;/p&gt;----------&lt;/p&gt;
+            &lt;/p&gt;
+            É meia noite em ponto e o galo cantou,
+            É meia noite em ponto e o galo cantou,
+            Cantou para anunciar que Tiriri chegou,
+            Cantou para anunciar que Tiriri chegou,
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+            Ele vem da calunga,
+            De capa e cartola,
+            E tridente na mão,     
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+            Esse Exú de fé,
+            É quem nos trás o axé,
+            E nos dá proteção,
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+            Ele é Exú Odara,
+            E vem nos ajudar,
+            Com seu punhal ele fura,
+            Ele corta demanda, ele salva, ele cura, Exú é mojubá,    
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+            Laroyê Exú,
+            Exú a mojubá,
+            Eu perguntei a ele o que é Exú,
+            Ele veio me falar,
+            Laroyê Exú,
+            Exú a mojubá,
+            Traz sua falange,
+            Exú Tiriri para trabalhar,
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+            Exú é caminho, é energia, é vida, é determinação,
+            É cumpridor da lei, Exú é esperto, Exú é guardião,
+            Exú é trabalho, é alegria veloz, Exú é viver,
+            É a magia, é o encanto,
+            É o fogo no sangue, na veia vibrando, Exú é lazer,
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;        
+
+            &lt;/p&gt;
+            Laroyê Exú,
+            Exú a mojubá,
+            Traz sua falange,
+            Exú Tiriri para trabalhar,
+            Laroyê Exú,
+            Exú a mojubá,
+            Traz sua falange,
+            Exú Tiriri para trabalhar,
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+            Vem seu tranca-ruas, Maria Padilha e Exú Marabô,
+            Sete encruzilhadas, seu Zé Pilintra aqui chegou,
+            Maria Mulambo, Maria Farrapo e Dona Figueira,
+            Dona Sete Saias, Pombo-gira Menina e Rosa Vermelha,
+            Sete catacumbas, Exú caveira firma o ponto aqui,
+            E o Exú Capa Preta anunciou a festa do Exú Tiriri,
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+            É meia noite em ponto e o galo cantou,
+            É meia noite em ponto e o galo cantou,
+            Cantou para anunciar que Tiriri chegou,
+            Cantou para anunciar que Tiriri chegou,
+            &lt;/p&gt;
+            &lt;/p&gt;----------&lt;/p&gt;">
+            <h3>Exu Tiriri</h3>
+            <p>Festa do Exú Tiriri</p>
+            <audio controls id="audio">
+                <source src="festadoexutiriri.mp3" type="audio/mp3">
+                Seu navegador não suporta a reprodução de áudio.
+            </audio>
+        </div>
+
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+        </div>
+    </div>
+
+</body>
+<script src="Script.js"></script>
+
+</html>

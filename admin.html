@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logosite.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cabecalho">
+        <h1 id="bemvindo">Bem-vindo!</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu-nav"></nav>
+    </div>
+
+    <script>
+        const usuarioLogado = localStorage.getItem("usuarioLogado");
+        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+        const pagina = location.pathname.split("/").pop();
+        const dados = usuarios[usuarioLogado];
+
+        if (!usuarioLogado || !dados || !dados.aprovado || !dados.permissoes.includes(pagina)) {
+            alert("Acesso negado!");
+            location.href = "index.html";
+        }
+
+        document.getElementById("bemvindo").innerText = `Bem-vindo(a)!! ${usuarioLogado}`;
+
+        const menuNav = document.getElementById("menu-nav");
+        dados.permissoes.forEach(pagina => {
+            const nomePagina = pagina.replace(".html", "")
+                .replace(/-/g, " ")
+                .replace(/\b\w/g, l => l.toUpperCase());
+            const link = document.createElement("a");
+            link.href = pagina;
+            link.innerText = nomePagina;
+            menuNav.appendChild(link);
+        });
+
+        function logout() {
+            localStorage.removeItem("usuarioLogado");
+            location.href = "index.html";
+        }
+    </script>
+
+    <div class="container">
+        <hr>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+        </div>
+    </div>
+</body>
+<script src="Script.js"></script>
+
+</html>

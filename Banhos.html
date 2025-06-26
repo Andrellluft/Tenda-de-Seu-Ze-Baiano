@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banhos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logosite.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        const user = localStorage.getItem("usuarioLogado");
+        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+        const pagina = location.pathname.split("/").pop();
+
+        if (!user || !usuarios[user] || !usuarios[user].aprovado || !usuarios[user].permissoes.includes(pagina)) {
+            alert("Acesso negado!");
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <div class="cabecalho">
+        <h1>Banhos !!</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu-navegacao">
+            <a href="Orixas.html">Orixas</a>
+            <a href="Linhas.html">Linhas</a>
+            <a href="Guias.html">Guias</a>
+            <a href="Filhos.html">Filhos</a>
+            <a href="Pontos.html">Pontos</a>
+            <a href="Banhos.html">Banhos</a>
+            <a href="Historia.html">Historia</a>
+            <a href="conhecimentos.html">Conhecimentos</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </div>
+
+    <section class="card-container">
+
+        <div class="card" data-preparo="" data-tipo="banho" data-nome="Camomila" data-img="camomila.jpg"
+            class="icon top-icon" data-tipobanho="
+                &lt;/p&gt;Banho Calmante;&lt;/p&gt;            
+                &lt;/p&gt;Acalma as emoções;&lt;/p&gt;
+                &lt;/p&gt;Ajuda no processo de perdão;&lt;/p&gt;
+                &lt;/p&gt;Traz leveza;&lt;/p&gt;
+                &lt;/p&gt;Promove o desapego;&lt;/p&gt;
+                &lt;/p&gt;Inibe a insegurança;&lt;/p&gt;
+                &lt;/p&gt;Descarrego emocional.&lt;/p&gt;
+                &lt;/p&gt;----------&lt;/p&gt;" data-banho="
+            &lt;/p&gt;
+                Coloque 1 litro de água para ferver e quando atingir o ponto de fervura, desligue o fogo; 
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                Adicione 4 colheres de flores de camomila, tampe e deixe em infusão por pelo menos 5 minutos;
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                Enquanto isso, tome seu banho como de costume, faça ser um momento bem relaxante e sem interrupções;
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                Ao finalizar, jogue o banho de camomila dos ombros aos pés, mentalizando o descarrego emocional, a leveza e o que mais você desejar trabalhar com esse banho;
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                De preferência, descarte as ervas no seu jardim ou vaso de planta.
+            &lt;/p&gt;
+            &lt;/p&gt;----------&lt;/p&gt;">
+
+            <h3>Camomila</h3>
+            <p>Banho Calmante</p>
+        </div>
+
+        <div class="card" data-preparo="" data-tipo="banho" data-nome="Sal Grosso e Ervas"
+            data-img="sal-grosso.jpg" class="icon top-icon" data-tipobanho="
+                &lt;/p&gt;Banho de Descarrego&lt;/p&gt;
+                &lt;/p&gt;----------&lt;/p&gt;" data-banho="
+            &lt;/p&gt;
+                O preparo do banho de ervas com sal grosso é sempre o mesmo, independente das ervas utilizadas. 
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                Para isso, você vai precisar de pelo menos 2 litros de água,
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                entre 1 e 3 colheres de sal grosso e uma quantidade generosa de ervas.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                Então, leve tudo para o fogo e quando começar a soltar bolhas, desligue.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                Depois, tome o seu banho higiênico como de costume e finalize jogando o banho de ervas e sal grosso do pescoço para baixo.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                Durante o banho de sal grosso e ervas é interessante manter o pensamento firme nas intenções que deseja trabalhar. Pense no que deseja banir da sua vida, quais energias te prejudicam e precisam ir embora e o que mais sentir. Se desejar, acenda uma vela preta durante o ritual para bani tudo que faz mal e proteger.
+            &lt;/p&gt;
+            &lt;/p&gt;----------&lt;/p&gt;">
+
+            <h3>Sal Grosso e Ervas</h3>
+            <p>Banho de Descarrego</p>
+        </div>
+
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+            <!-- Conteúdo gerado dinamicamente -->
+        </div>
+    </div>
+
+</body>
+<script src="Script.js"></script>
+
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conhecimentos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logosite.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        const user = localStorage.getItem("usuarioLogado");
+        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+        const pagina = location.pathname.split("/").pop();
+
+        if (!user || !usuarios[user] || !usuarios[user].aprovado || !usuarios[user].permissoes.includes(pagina)) {
+            alert("Acesso negado!");
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <div class="cabecalho">
+        <h1>Conhecimentos !!</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu-navegacao">
+            <a href="Orixas.html">Orixas</a>
+            <a href="Linhas.html">Linhas</a>
+            <a href="Guias.html">Guias</a>
+            <a href="Filhos.html">Filhos</a>
+            <a href="Pontos.html">Pontos</a>
+            <a href="Banhos.html">Banhos</a>
+            <a href="Historia.html">Historia</a>
+            <a href="conhecimentos.html">Conhecimentos</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </div>
+
+    <section class="card-container">
+
+        <div class="card" data-explicacao="" data-tipo="conhecimentos" data-nome="Dias dos Orixas" data-img="sem-foto.jpg"
+            class="icon top-icon" data-texto="
+            &lt;/p&gt;
+                EM BREVE..Dias dos Orixas............
+            &lt;/p&gt;
+            &lt;/p&gt;----------&lt;/p&gt;">
+
+            <h3>Dias dos Orixas</h3>
+        </div>
+
+        <div class="card" data-explicacao="" data-tipo="conhecimentos" data-nome="Saudação a Exu" data-img="exu.jpg"
+            class="icon top-icon" data-texto="
+            &lt;/p&gt;
+                A saudação ''Laroyê'' , classicamente utilizada para Exus e Pombagiras , encontra suas raízes no grupo étnico-linguístico nagô-iorubá , evocando significados como
+            &lt;/p&gt;
+            &lt;/p&gt;
+            ''Salve o mensageiro'' , ''Olhe por mim , Exu'' e ''Proteja-me'' .
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                ''Mojubá'' ,  por sua vez , insere-se no discurso ritualístico para expressar respeito e reverência ,  traduzindo-se como '' A vós ,  meus respeitos '' , '' Eu te saúdo '' ou '' Eu o reconheço como superior ''.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;
+                É , portanto, comum saudar Exu com este termo.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                '' Elegbara '' ou '' Bará '', uma das qualidades atribuídas à divindade Exu na cultura africana, é também utilizado como saudação em alguns templos.
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+                A frase '' Bará Olóònòn àwa fún àgò '' invoca '' Exu do corpo, senhor dos caminhos, conceda-nos licença ''.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                '' Ina Ina '', termo de origem iorubá pronunciado como '' inã '', remete a Exu do fogo ou a atributos relacionados a essa característica.
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+               servindo como saudação a uma das facetas do mistério Exu.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                '' Odara '', vocábulo que designa tudo o que é belo, benéfico e harmonioso, assume grande importância no Candomblé.
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+                A busca pelo estado de '' Odara '' manifesta-se na confecção primorosa de vestimentas e ornamentos utilizados pelos Orixás no Xirê , um gesto de dedicação e reverência aos deuses africanos. 
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+                Em algumas tradições , '' Odara '' também se refere a um Exu guia , aquele que abre caminhos e precede os demais.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                '' Ojixé '' , qualificação de Exu que enfatiza sua regência sobre os caminhos, é invocado na frase '' A pàdé olóònòn e mo juba Òjísè '',
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+                que significa '' Encontramos o senhor dos caminhos e prestamos homenagem a Ojixé ''.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                A saudação '' Kobá Laroyê '' , frequentemente utilizada para reverenciar Exu, combina os termos '' Kobá '' (Rei) e '' Laroyê '' , expressando respeito ao Rei Exu.
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+                Em alguns templos , especialmente os de nação , esta é a saudação primordial dirigida ao Orixá Exu, sobretudo quando a falange de Exu Rei se manifesta.
+            &lt;/p&gt;
+            &lt;/p&gt;----------&lt;/p&gt;">
+
+            <h3>Saudação a Exu.</h3>
+            <p>Fundamentos das Saldações</p>
+        </div>
+
+        <div class="card" data-explicacao="" data-tipo="conhecimentos" data-nome="!! Kiumbas !!" data-img="sem-foto.jpg"
+            class="icon top-icon" data-texto="
+            &lt;/p&gt;
+                A identificação de entidades kiumbas, espíritos de baixa vibração, exige discernimento e observação atenta.
+            &lt;/p&gt;
+            &lt;/p&gt;
+                Seus comportamentos e manifestações destoam da conduta esperada de entidades espirituais elevadas.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                •Kiumbas exibem comportamento leviano, indecoroso e pedante, marcado por ignorância, maledicência e fofoca.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;
+                Sua conduta carece de ética espiritual, confundindo alegria com desrespeito aos limites do bom senso e da moral.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                •Manifestam-se com características grotescas, como deformidades físicas, carrancas e olhos esbugalhados.
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+                A falta de higiene, a ingestão excessiva de álcool, o tabagismo compulsivo e as ameaças constantes são traços distintivos.
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+                O uso de adereços macabros, como caveiras e ossos, reforça a atmosfera de terror.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                •Exibem sensualidade exacerbada, exigindo vestimentas caras e provocativas.
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+               A risada extravagante, o incentivo ao sexo desenfreado e a intervenção destrutiva em relacionamentos são marcas de sua atuação.
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+                A vulgaridade e o uso de linguagem obscena são frequentes.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                •Kiumbas induzem à crença em demandas e magias inexistentes, apontando falsos culpados para instigar ódio e vingança.
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+                Essa estratégia visa prejudicar tanto o consulente quanto o médium e o suposto agressor.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                •Exigem rituais extravagantes e oferendas constantes, compostas por carne crua, álcool e sangue.
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+                Essas práticas alimentam suas manipulações e visam enfraquecer a atuação de espíritos de luz.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                •Utilizam linguagem imprópria, com palavrões e expressões vulgares.
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+                A justificativa de que tais termos expressam '' carinho e amor '' é falaciosa.
+            &lt;/p&gt;
+            
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                •Demonstram apego a bens materiais, exigindo roupas luxuosas e presentes valiosos.
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+                A barganha por favores espirituais em troca de presentes revela sua natureza interesseira.
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                Incitam a luxúria, promovendo traições e separações.
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+                A escolha de auxiliares (cambones) com base em atributos físicos e a conduta libidinal durante os atendimentos evidenciam sua obsessão por prazeres carnais.
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                •Demonstram conhecimento superficial do mundo espiritual e da Umbanda. Suas explicações são vagas e apelam para acusações de feitiçaria.
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+                A tendência a reforçar a vitimização do consulente e a ignorar a responsabilidade individual é um traço marcante.
+            &lt;/p&gt;
+
+            &lt;/p&gt;----------&lt;/p&gt;
+                Nota:
+            &lt;/p&gt;----------&lt;/p&gt;
+
+            &lt;/p&gt;
+                A espiritualidade superior nos adverte: '' Orai e vigiai '''.
+            &lt;/p&gt;
+
+            &lt;/p&gt;
+                A atenção constante e o discernimento são essenciais para manter a integridade espiritual e evitar a influência de entidades que se desviam dos princípios da luz e do amor.
+            &lt;/p&gt;            
+            &lt;/p&gt;----------&lt;/p&gt;">
+
+            <h3>!! Kiumbas !!</h3>
+            <p>Significado e explicações</p>
+        </div>
+
+        <div class="card" data-explicacao="" data-tipo="conhecimentos" data-nome="!! Egum !!" data-img="sem-foto.jpg"
+            class="icon top-icon" data-texto="
+            &lt;/p&gt;
+                EM BREVE..............
+            &lt;/p&gt;
+            &lt;/p&gt;----------&lt;/p&gt;">
+
+            <h3>!! Egum !!</h3>
+            <p>Significado e explicações</p>
+        </div>
+
+        <div class="card" data-explicacao="" data-tipo="conhecimentos" data-nome="Pontos Riscados!" data-img="sem-foto.jpg"
+            class="icon top-icon" data-texto="
+            &lt;/p&gt;
+                EM BREVE..............
+            &lt;/p&gt;
+            &lt;/p&gt;----------&lt;/p&gt;">
+
+            <h3>Pontos Riscados!</h3>
+            <p>Fundamentos.</p>
+        </div>
+
+        <div class="card" data-explicacao="" data-tipo="conhecimentos" data-nome="Gargalhada de Exu e Pomba Gira!" data-img="sem-foto.jpg"
+            class="icon top-icon" data-texto="
+            &lt;/p&gt;
+                EM BREVE..............
+            &lt;/p&gt;
+            &lt;/p&gt;----------&lt;/p&gt;">
+
+            <h3>Gargalhada de Exu e Pomba Gira!</h3>
+            <p>Explicação.</p>
+        </div>
+
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+            <!-- Conteúdo gerado dinamicamente -->
+        </div>
+    </div>
+
+</body>
+<script src="Script.js"></script>
+
+</html>

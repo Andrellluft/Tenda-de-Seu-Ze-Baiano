@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+/* Estilo base (desktop) */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  color: #00ffff;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Estilo para telas pequenas */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    text-align: right;
+  }
+
+  nav#menu-navegacao {
+    display: none;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  nav#menu-navegacao a {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  nav#menu-navegacao.ativo {
+    display: flex;
+  }
+}
+
+
+body {
+  width: auto;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('imagem-fundo.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Orbitron', sans-serif;
+  color: #e0e0e0;
+}
+
+body h1 {
+  color: #00ffff;
+  text-shadow: 0 0 10px black;
+  font-size: 32px;
+  margin: 0 0 15px 0;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 15px #000;
+}
+
+.cabecalho h1 {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  font-size: 32px;
+  margin: 0 0 15px 0;
+}
+
+.cabecalho nav a {
+  color: #ccc;
+  margin: 0 12px;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.cabecalho nav a:hover {
+  color: #00f2ff;
+  text-shadow: 0 0 5px #00f2ff;
+}
+
+/* Página Inicial */
+
+#posicionamento-principal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+/* Container do formulário */
+.container {
+  max-width: 400px;
+  margin: 80px auto;
+  background-color: rgba(10, 10, 20, 0.8);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  text-align: center;
+}
+
+#form-title {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #00ffff;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #fff;
+  box-shadow: 0 0 8px #00ffff;
+}
+
+/* Botão de login */
+button {
+  background-color: #00ffff;
+  border: none;
+  color: #000;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #00d9d9;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+/* Link para alternar entre login/cadastro */
+.toggle {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.toggle:hover {
+  color: #00ffff;
+}
+
+/*Para destacar automaticamente o link da página atual no menu de navegação*/
+
+nav a.ativo {
+  color: #00ffff;
+  /* ou outra cor de destaque */
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 2px solid #00ffff;
+  /* exemplo de destaque */
+}
+
+/* cards */
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px #000;
+  transition: transform 0.2s ease-in-out;
+  border: 1px solid #00ffff44;
+}
+
+.card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 5px 25px #00ffff88;
+}
+
+.card h3 {
+  color: #00ffff;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card h5 {
+  color: #4d8181;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.card p {
+  color: #ccc;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0, 255, 255, 0.2);
+}
+
+/* colocar Modal  */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  background-color: #1e1e2e;
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  color: #fff;
+  box-shadow: 0 0 20px #00ffff88;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: #00ffff;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  color: #00ffff;
+  cursor: pointer;
+}
+
+.icon-paragraph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 15px;
+  color: aqua;
+}
+
+.top-icon {
+  width: 30%;
+  height: 20%;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #00ffff44;
+}
+
+#audio {
+  border-radius: 25px;
+  background-color: aqua;
+  box-shadow: 0 -2px 10px aqua;
+}
+
+/* Rodapé */
+
+footer {
+  background-color: rgba(18, 18, 45, 0.8);
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  box-shadow: 0 -2px 10px #000;
+}
+
+.social-icons {
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  color: #00ffff;
+  margin: 0 8px;
+  font-size: 20px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #00ffff;
+}

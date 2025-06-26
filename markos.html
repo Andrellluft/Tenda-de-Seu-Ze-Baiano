@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logosite.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cabecalho">
+        <h1 id="bemvindo">Bem-vindo!</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu-nav"></nav>
+    </div>
+
+    <script>
+        const usuarioLogado = localStorage.getItem("usuarioLogado");
+        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+        const pagina = location.pathname.split("/").pop();
+        const dados = usuarios[usuarioLogado];
+
+        if (!usuarioLogado || !dados || !dados.aprovado || !dados.permissoes.includes(pagina)) {
+            alert("Acesso negado!");
+            location.href = "index.html";
+        }
+
+        document.getElementById("bemvindo").innerText = `Bem-vindo(a)!! ${usuarioLogado}`;
+
+        const menuNav = document.getElementById("menu-nav");
+        dados.permissoes.forEach(pagina => {
+            const nomePagina = pagina.replace(".html", "")
+                .replace(/-/g, " ")
+                .replace(/\b\w/g, l => l.toUpperCase());
+            const link = document.createElement("a");
+            link.href = pagina;
+            link.innerText = nomePagina;
+            menuNav.appendChild(link);
+        });
+
+        function logout() {
+            localStorage.removeItem("usuarioLogado");
+            location.href = "index.html";
+        }
+    </script>
+
+    <section class="card-container">
+
+        <div class="card" data-tipo="markos" data-nome="Markos" data-tempo_de_casa="7 Anos" 
+            data-buzios="Sim" data-orixa_de_frente="Ogum Beira-mar" data-orixa_de_costas="Iemanja"
+            data-orixa_de_enredo="Obaluaie" data-mestre="Nao" data-cablocos="Tupinamba" data-almas="Vó Catarina"
+            data-ibejada="XXXXXXXXXX" data-esquerda="Tranca Rua das Almas - Pomba Gira Menina do Cabaré"
+            data-obrigacoes="XXXXXXXXXX" data-img="markos.png" class="icon top-icon">
+            <img src="markos.png" alt="Markos">
+            <h3>Markos</h3>
+            <h5>Cargo: Cambone</h5>
+            <p>Auxilia os Guias na Hora da Incorporação.</p>
+        </div>
+    </section>
+
+    <section class="card-container">
+
+        <div class="card" data-tipo="monstro" data-nome="Ogum" data-ataque="110" data-defesa="60" data-poder="Normal"
+            data-ataque="110" data-defesa="60" data-img="ogum.jpg">
+            <img src="pin-ogum.jpg" alt="Ogum">
+            <h3>Ogum</h3>
+            <h5>Trono : Lei</h5>
+            <p>Ordem, combate ao mal, disciplina, quebra de demandas negativas.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/GieA4Wbfuk0?si=UEvkuYZG7Dq7uHBU"
+                title="Se meu Pai é Ogum, vencedor de demanda" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Yemanjá" data-ataque="300" data-defesa="150" data-poder="Gelo"
+            data-ataque="110" data-defesa="60" data-img="iemanja.jpg">
+            <img src="pin-iemanja.jpg" alt="Yemanjá">
+            <h3>Yemanjá</h3>
+            <h5>Trono : Geração e Vida</h5>
+            <p>Criação, ciclos da vida, equilíbrio dos planos.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/BjgGuQGVeoM?si=jgnIrkUf4GjEhO27" title="Hoje eu vou cantar!"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </section>
+
+    <div class="container">
+        <hr>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+        </div>
+    </div>
+</body>
+<script src="Script.js"></script>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>André</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logosite.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cabecalho">
+        <h1 id="bemvindo">Bem-vindo!</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu-nav"></nav>
+    </div>
+
+    <script>
+        const usuarioLogado = localStorage.getItem("usuarioLogado");
+        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+        const pagina = location.pathname.split("/").pop();
+        const dados = usuarios[usuarioLogado];
+
+        if (!usuarioLogado || !dados || !dados.aprovado || !dados.permissoes.includes(pagina)) {
+            alert("Acesso negado!");
+            location.href = "index.html";
+        }
+
+        document.getElementById("bemvindo").innerText = `Bem-vindo(a)!! ${usuarioLogado}`;
+
+        const menuNav = document.getElementById("menu-nav");
+        dados.permissoes.forEach(pagina => {
+            const nomePagina = pagina.replace(".html", "")
+                .replace(/-/g, " ")
+                .replace(/\b\w/g, l => l.toUpperCase());
+            const link = document.createElement("a");
+            link.href = pagina;
+            link.innerText = nomePagina;
+            menuNav.appendChild(link);
+        });
+
+        function logout() {
+            localStorage.removeItem("usuarioLogado");
+            location.href = "index.html";
+        }
+    </script>
+
+    <section class="card-container">
+
+        <div class="card" data-tipo="andre" data-nome="André" data-tempo_de_casa="6 Anos" 
+            data-buzios="Sim" data-orixa_de_frente="Obaluaie" data-orixa_de_costas="Nanã" data-orixa_de_enredo="Iemanja"
+            data-mestre="Pilão Deitado" data-cablocos="XXXXXXXXXX" data-almas="Pai Mané" data-ibejada="Luizinho"
+            data-esquerda="Caveira - Rosa Caveira" data-obrigacoes="Janeiro-2025" data-img="andre.png"
+            class="icon top-icon">
+            <img src="andre.png" alt="André">
+            <h3>André</h3>
+            <h5>Cargo: Médium - Mão de Corte</h5>
+            <p>Atendimento com Incorporação e Corte das Oferendas.</p>
+        </div>
+
+        <div class="card" data-tipo="odus" data-nome="Odu's" data-img="sem-foto.jpg" data-stefanie="Stefanie"
+            data-odustefanie="Bara&lt;/p&gt;**********************&lt;/p&gt;" data-markos="Markos"
+            data-odumarkos="XXXXXXXXXX&lt;/p&gt;**********************&lt;/p&gt;" data-lino="Lino"
+            data-odulino="XXXXXXXXXX&lt;/p&gt;**********************&lt;/p&gt;" data-joao="João"
+            data-odujoao="Odí&lt;/p&gt;**********************&lt;/p&gt;" data-joaozinho="Joaozinho"
+            data-odujoaozinho="XXXXXXXXXX&lt;/p&gt;**********************&lt;/p&gt;" data-gordo="Gordo"
+            data-odugordo="Odí&lt;/p&gt;**********************&lt;/p&gt;" data-liliane="Liliane"
+            data-oduliliane="XXXXXXXXXX&lt;/p&gt;**********************&lt;/p&gt;" data-jennifer="Jennifer"
+            data-odujennifer="Odí&lt;/p&gt;**********************&lt;/p&gt;" data-andre="André"
+            data-oduandre="Osé&lt;/p&gt;-----------------------------------------&lt;/p&gt;">
+            <img src="sem-foto.jpg" alt="Foto Buzios">
+            <h3>---------- Odu's ----------</h3>
+        </div>
+    </section>
+
+    <section class="card-container">
+
+        <div class="card" data-tipo="monstro" data-nome="Obaluaye" data-ataque="110" data-defesa="60"
+            data-poder="Normal" data-ataque="110" data-defesa="60" data-img="obaluaie.jpg">
+            <img src="pin-obaluaie.jpg" alt="Omolu - Obaluayê">
+            <h3>Omolu - Obaluayê</h3>
+            <h5>Trono : Evolução</h5>
+            <p>Transformação espiritual, ancestralidade, regeneração.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/L80AXn2Shnc?si=wAkPZ5ekqtXENA6q"
+                title="MEU PAI OXALA É O REI VENHA ME VALER" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Nanã" data-ataque="110" data-defesa="60" data-poder="Normal"
+            data-ataque="110" data-defesa="60" data-img="nana.jpg">
+            <img src="pin-nana.jpg" alt="Nanã">
+            <h3>Nanã</h3>
+            <h5>Trono : Evolução</h5>
+            <p>Transformação espiritual, ancestralidade, regeneração.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/fy1LE15pWbA?si=jBomEXadmfeTkNOV" title="ELA É SINDA!" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Yemanjá" data-ataque="300" data-defesa="150" data-poder="Gelo"
+            data-ataque="110" data-defesa="60" data-img="iemanja.jpg">
+            <img src="pin-iemanja.jpg" alt="Yemanjá">
+            <h3>Yemanjá</h3>
+            <h5>Trono : Geração e Vida</h5>
+            <p>Criação, ciclos da vida, equilíbrio dos planos.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/BjgGuQGVeoM?si=jgnIrkUf4GjEhO27" title="Hoje eu vou cantar!"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="exu-caveira.jpg" alt="Exu Caveira">
+            <h3>Exu Caveira</h3>
+            <p>Reino : Cemitério , Encruzilhadas</p>
+            <iframe class="video-container" width="300" height="250" src="XXXXXXXXXXXXXXXXXXXXXXXXX"
+                title="XXXXXXXXXXXXXXXXXXXXXXXXXX" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="rosa-caveira.jpg" alt="Exu Veludo">
+            <h3>Rosa Caveira</h3>
+            <p>Reino : Calunga</p>
+            <iframe class="video-container" width="300" height="250" src="XXXXXXXXXXXXXXXXXXXXXX"
+                title="XXXXXXXXXXXXXXXXXXXXXXXXXX" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </section>
+
+    <div class="container">
+        <hr>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+        </div>
+    </div>
+</body>
+<script src="Script.js"></script>
+
+</html>

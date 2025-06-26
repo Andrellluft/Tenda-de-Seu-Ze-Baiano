@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodrigo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logosite.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cabecalho">
+        <h1 id="bemvindo">Bem-vindo!</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu-nav"></nav>
+    </div>
+
+    <script>
+        const usuarioLogado = localStorage.getItem("usuarioLogado");
+        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+        const pagina = location.pathname.split("/").pop();
+        const dados = usuarios[usuarioLogado];
+
+        if (!usuarioLogado || !dados || !dados.aprovado || !dados.permissoes.includes(pagina)) {
+            alert("Acesso negado!");
+            location.href = "index.html";
+        }
+
+        document.getElementById("bemvindo").innerText = `Bem-vindo(a)!! ${usuarioLogado}`;
+
+        const menuNav = document.getElementById("menu-nav");
+        dados.permissoes.forEach(pagina => {
+            const nomePagina = pagina.replace(".html", "")
+                .replace(/-/g, " ")
+                .replace(/\b\w/g, l => l.toUpperCase());
+            const link = document.createElement("a");
+            link.href = pagina;
+            link.innerText = nomePagina;
+            menuNav.appendChild(link);
+        });
+
+        function logout() {
+            localStorage.removeItem("usuarioLogado");
+            location.href = "index.html";
+        }
+    </script>
+
+    <section class="card-container">
+
+        <div class="card" data-tipo="Rodrigo" data-nome="Rodrigo" data-tempo_de_casa="Fundou" data-buzios="Sim"
+            data-orixa_de_frente="Oxalufan" data-orixa_de_costas="Iemanja" data-orixa_de_enredo="Nana"
+            data-mestre="Zé Baiano" data-cablocos="Pena Branca" data-almas="XXXXXXXXXX" data-ibejada="Lufanzinho"
+            data-esquerda="Exu Veludo - Cigana Hellena" data-obrigacoes="Completas" data-img="sem-foto.jpg"
+            class="icon top-icon">
+            <img src="sem-foto.jpg" alt="Rodrigo">
+            <h3>Rodrigo</h3>
+            <p>Cargo: Pai de Santo</p>
+        </div>
+
+        <div class="card" data-tipo="odus" data-nome="Odu's" data-img="sem-foto.jpg" data-stefanie="Stefanie"
+            data-odustefanie="Bara&lt;/p&gt;**********************&lt;/p&gt;" data-markos="Markos"
+            data-odumarkos="Abikú&lt;/p&gt;**********************&lt;/p&gt;" data-lino="Lino"
+            data-odulino="XXXXXXXXXX&lt;/p&gt;**********************&lt;/p&gt;" data-joao="João"
+            data-odujoao="Odí&lt;/p&gt;**********************&lt;/p&gt;" data-joaozinho="Joaozinho"
+            data-odujoaozinho="XXXXXXXXXX&lt;/p&gt;**********************&lt;/p&gt;" data-gordo="Gordo"
+            data-odugordo="Odí&lt;/p&gt;**********************&lt;/p&gt;" data-liliane="Liliane"
+            data-oduliliane="XXXXXXXXXX&lt;/p&gt;**********************&lt;/p&gt;" data-jennifer="Jennifer"
+            data-odujennifer="Odí&lt;/p&gt;**********************&lt;/p&gt;" data-andre="André"
+            data-oduandre="Osé&lt;/p&gt;-----------------------------------------&lt;/p&gt;">
+            <img src="sem-foto.jpg" alt="Foto Buzios">
+            <h3>---------- Odu's ----------</h3>
+        </div>
+    </section>
+
+    <section class="card-container">
+
+        <div class="card">
+            <img src="exu-veludo.jpg" alt="Exu Veludo">
+            <h3>Exu Veludo</h3>
+            <p>Reino : Encruzilhadas</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/O1q9pI4SJNY?si=QoasO5QLJufZr9eT"
+                title="Ninguem Pode Comigo , Eu Posso Contudo." frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="sem-foto.jpg" alt="Cigana Hellena">
+            <h3>Cigana Hellena</h3>
+            <p>Reino : Lira</p>
+            <iframe class="video-container" width="300" height="250" src="xxxxxxxxxxxxxxxxxxxxxx"
+                title="XXXXXXXXXXXXXXXXXXXXXXXXXX" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="ze-baiano.png" alt="Ze Baiano">
+            <h3>Ze Baiano</h3>
+            <p>Linha dos Mestres/Baianos</p>
+            <iframe class="video-container" width="300" height="250" src="xxxxxxxxxxxxxxxxxxxxxx"
+                title="XXXXXXXXXXXXXXXXXXXXXXXXXX" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Oxala" data-ataque="120" data-defesa="80" data-poder="Vento"
+            data-ataque="110" data-defesa="60" data-img="oxalufa.jpg">
+            <img src="pin-oxalufa.jpg" alt="Oxalua">
+            <h3>Oxala</h3>
+            <h5>Trono : Fé</h5>
+            <p>Ligado à religiosidade, espiritualidade e ligação com o divino.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/7v2xj6JTlAA?si=FcIj7PEAkcP3LLZq" title="Canto de Oxalá"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+    </section>
+
+    <div class="container">
+        <hr>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+        </div>
+    </div>
+</body>
+<script src="Script.js"></script>
+
+</html>

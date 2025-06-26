@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orixas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logosite.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        const user = localStorage.getItem("usuarioLogado");
+        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+        const pagina = location.pathname.split("/").pop();
+
+        if (!user || !usuarios[user] || !usuarios[user].aprovado || !usuarios[user].permissoes.includes(pagina)) {
+            alert("Acesso negado!");
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <div class="cabecalho">
+        <h1>7 Linhas de Oxala !!</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu-navegacao">
+            <a href="Orixas.html">Orixas</a>
+            <a href="Linhas.html">Linhas</a>
+            <a href="Guias.html">Guias</a>
+            <a href="Filhos.html">Filhos</a>
+            <a href="Pontos.html">Pontos</a>
+            <a href="Banhos.html">Banhos</a>
+            <a href="Historia.html">Historia</a>
+            <a href="conhecimentos.html">Conhecimentos</a>
+            <a href="logout.html">Logout</a>
+        </nav>
+    </div>
+
+    <section class="card-container">
+
+        <div class="card">
+            <img src="pin-oxaguia.jpg" alt="Olorum">
+            <h3>Olorum</h3>
+            <h5>Sua figura representa o princípio da existência e o equilíbrio espiritual do cosmos.</h5>
+            <p>Ele é considerado o criador de tudo, o ser supremo que rege o universo, a fonte de toda a energia vital
+                (axé).
+            </p>
+
+            <p>Por isso, os orixás . como Oxóssi, Iemanjá e Xangô, são mais presentes no culto, funcionando como
+                manifestações específicas das vontades e forças de Olorum.
+            </p>
+            <h5>Salve o pai celestial criador de todas as coisas!.</h5>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Oxala" data-ataque="120" data-defesa="80" data-poder="Vento"
+            data-ataque="110" data-defesa="60" data-img="oxalufa.jpg">
+            <img src="pin-oxalufa.jpg" alt="Oxalua">
+            <h3>Oxala</h3>
+            <h5>Trono : Fé</h5>
+            <p>Ligado à religiosidade, espiritualidade e ligação com o divino.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/7v2xj6JTlAA?si=FcIj7PEAkcP3LLZq" title="Canto de Oxalá"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Nanã" data-ataque="110" data-defesa="60" data-poder="Normal"
+            data-ataque="110" data-defesa="60" data-img="nana.jpg">
+            <img src="pin-nana.jpg" alt="Nanã">
+            <h3>Nanã</h3>
+            <h5>Trono : Evolução</h5>
+            <p>Transformação espiritual, ancestralidade, regeneração.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/fy1LE15pWbA?si=jBomEXadmfeTkNOV" title="ELA É SINDA!" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Yemanjá" data-ataque="300" data-defesa="150" data-poder="Gelo"
+            data-ataque="110" data-defesa="60" data-img="iemanja.jpg">
+            <img src="pin-iemanja.jpg" alt="Yemanjá">
+            <h3>Yemanjá</h3>
+            <h5>Trono : Geração e Vida</h5>
+            <p>Criação, ciclos da vida, equilíbrio dos planos.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/BjgGuQGVeoM?si=jgnIrkUf4GjEhO27" title="Hoje eu vou cantar!"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Ogum" data-ataque="110" data-defesa="60" data-poder="Normal"
+            data-ataque="110" data-defesa="60" data-img="ogum.jpg">
+            <img src="pin-ogum.jpg" alt="Ogum">
+            <h3>Ogum</h3>
+            <h5>Trono : Lei</h5>
+            <p>Ordem, combate ao mal, disciplina, quebra de demandas negativas.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/GieA4Wbfuk0?si=UEvkuYZG7Dq7uHBU"
+                title="Se meu Pai é Ogum, vencedor de demanda" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Obaluaye" data-ataque="110" data-defesa="60"
+            data-poder="Normal" data-ataque="110" data-defesa="60" data-img="obaluaie.jpg">
+            <img src="pin-obaluaie.jpg" alt="Omolu - Obaluayê">
+            <h3>Omolu - Obaluayê</h3>
+            <h5>Trono : Evolução</h5>
+            <p>Transformação espiritual, ancestralidade, regeneração.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/L80AXn2Shnc?si=wAkPZ5ekqtXENA6q"
+                title="MEU PAI OXALA É O REI VENHA ME VALER" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Oxum" data-ataque="110" data-defesa="60" data-poder="Normal"
+            data-ataque="110" data-defesa="60" data-img="oxum.jpg">
+            <img src="pin-oxum.jpg" alt="Oxum">
+            <h3>Oxum</h3>
+            <h5>Trono : Amor</h5>
+            <p>Compaixão, beleza, caridade, união e atração.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/WNXj9h0IIGs?si=S3S2QGwgPkCtt5Df"
+                title="EU VÍ MAMÃE OXUM NA CACHOEIRA" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Iansã" data-ataque="110" data-defesa="60" data-poder="Normal"
+            data-ataque="110" data-defesa="60" data-img="iansa.jpg">
+            <img src="pin-iansa.jpg" alt="Iansã">
+            <h3>Iansã</h3>
+            <h5>Trono : Lei</h5>
+            <p>Ordem, combate ao mal, disciplina, quebra de demandas negativas.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/JjOJm7pbPxk?si=HBjfQPgV0hCv7XHv" title="Meu pai que barulho é esse"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Oxóssi" data-ataque="110" data-defesa="60" data-poder="Normal"
+            data-ataque="110" data-defesa="60" data-img="oxossi.jpg">
+            <img src="pin-oxossi.jpg" alt="Oxóssi">
+            <h3>Oxóssi</h3>
+            <h5>Trono : Conhecimento</h5>
+            <p>Sabedoria, estudo, aprendizado, intuição e razão.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/1K7h_hfAf0Y?si=4Oe1IMUt1hg5V80y&amp;start=1"
+                title="eu vi chover , eu vi relampiar" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Xangô" data-ataque="110" data-defesa="60" data-poder="Normal"
+            data-ataque="110" data-defesa="60" data-img="xango.jpg">
+            <img src="pin-xango.jpg" alt="Xangô">
+            <h3>Xangô</h3>
+            <h5>Trono : Justiça</h5>
+            <p>Julgamento, equilíbrio, reparação de erros e karma.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/po1iN9lkCSU?si=wpHwr7-IRoF_EIKg"
+                title="Dizem que Xangô Mora na Pedreira" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Ossãe" data-ataque="110" data-defesa="60" data-poder="Normal"
+            data-ataque="110" data-defesa="60" data-img="ossain.jpg">
+            <img src="pin-ossain.jpg" alt="Ossãe">
+            <h3>Ossãe</h3>
+            <h5>Trono : Cura</h5>
+            <p>Cura, medicina espiritual, equilíbrio dos corpos.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/hk-bTeyfWSY?si=qWVuezZC8O-B68t0" title="Pai das matas"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="monstro" data-nome="Exu" data-ataque="110" data-defesa="60" data-poder="Normal"
+            data-ataque="110" data-defesa="60" data-img="exu.jpg">
+            <img src="pin-exu.jpg" alt="Exu">
+            <h3>Exu</h3>
+            <h5>Trono : Movimento</h5>
+            <p>Abertura de caminhos, comunicação, desejo, ação, fluidez.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/EKSilNQPUfI?si=ACIdjQAkxz-FL1hN" title="Exu É Quem Abre os Caminhos"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+            <!-- Conteúdo gerado dinamicamente -->
+        </div>
+    </div>
+
+</body>
+<script src="Script.js"></script>
+
+</html>
