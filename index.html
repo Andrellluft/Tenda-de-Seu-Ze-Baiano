@@ -23,6 +23,8 @@
             <input type="password" id="password" placeholder="Senha" />
             <button onclick="handleSubmit()">Entrar</button>
             <p class="toggle" onclick="toggleForm()">Ainda não tem conta? Cadastre-se</p>
+            <button onclick="atualizarSite()" style="margin-top: 15px; background-color: aqua; color: black;">Atualize
+                Antes de Entrar</button>
         </div>
 
         <footer>
@@ -86,6 +88,13 @@
                     localStorage.setItem("usuarios", JSON.stringify(usuarios));
                     alert("Cadastro enviado! Aguarde aprovação do Pai de Santo.");
                     toggleForm();
+                }
+            }
+
+            function atualizarSite() {
+                if (confirm("Deseja limpar os dados salvos e recarregar o site?")) {
+                    localStorage.clear();
+                    location.reload();
                 }
             }
 
