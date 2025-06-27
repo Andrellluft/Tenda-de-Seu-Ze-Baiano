@@ -95,10 +95,17 @@ document.querySelectorAll(".card").forEach(card => {
     switch (tipo) {
       case 'orixas':
         extraHTML = `
-            <p><strong>Uso:</strong> ${card.dataset.uso}</p>
-            <p><strong>Raridade:</strong> ${card.dataset.raridade}</p>
-            <p><strong>Local:</strong> ${card.dataset.local}</p>
-            <p><strong>Habilidades:</strong> ${card.dataset.habilidades}</p>
+            <p><strong>Dia da Semana:</strong> ${card.dataset.diadasemana}</p>
+            <p><strong>Folhas e Ervas:</strong> ${card.dataset.folhaseervas}</p>
+            <p><strong>Pedras:</strong> ${card.dataset.pedras}</p>
+            <p><strong>Tipos de Oferendas:</strong> ${card.dataset.oferendas}</p>
+            <p><strong>Observações:</strong> ${card.dataset.observacoes}</p>
+          `;
+        break;
+
+      case 'olorum':
+        extraHTML = `
+            <p><strong>Observações:</strong> ${card.dataset.observacoes}</p>
           `;
         break;
 
@@ -114,20 +121,41 @@ document.querySelectorAll(".card").forEach(card => {
           `;
         break;
 
-      case 'pontos':
+      case 'ponto':
         extraHTML = `
-            <p><strong>Local:</strong> ${card.dataset.local}</p>
-            <p><strong>Produtos:</strong> ${card.dataset.produtos}</p>
-            <p><strong>Especialidade:</strong> ${card.dataset.especialidade}</p>
+            <p class="icon-paragraph"><strong>Nome Ponto:</strong> ${card.dataset.nomeponto}</p>
+            <p class="icon-paragraph"><strong></strong>${card.dataset.pontotexto}</p>
           `;
         break;
 
-      case 'banhos':
+      case 'banho':
         extraHTML = `
-            <p><strong>Ataque:</strong> ${card.dataset.ataque}</p>
-            <p><strong>Defesa:</strong> ${card.dataset.defesa}</p>
-            <p><strong>Poder:</strong> ${card.dataset.poder}</p>
-            <p><strong>Habilidades:</strong> ${card.dataset.habilidades}</p>
+            <p class="icon-paragraph"><strong>Tipo de Banho:</strong> ${card.dataset.tipobanho}</p>
+            <p class="icon-paragraph"><strong>Modo de Preparo:</strong>${card.dataset.preparo}</p>
+            <p class="icon-paragraph"><strong></strong>${card.dataset.banho}</p>
+          `;
+        break;
+
+      case 'ervas':
+        extraHTML = `
+            <p class="icon-paragraph"><strong>Tipo de Banho:</strong> ${card.dataset.tipobanho}</p>
+            <p class="icon-paragraph"><strong>Modo de Preparo:</strong>${card.dataset.preparo}</p>
+            <p class="icon-paragraph"><strong></strong>${card.dataset.banho}</p>
+          `;
+        break;
+
+      case 'guias':
+        extraHTML = `
+            <p class="icon-paragraph"><strong>Tipo de Banho:</strong> ${card.dataset.tipobanho}</p>
+            <p class="icon-paragraph"><strong>Modo de Preparo:</strong>${card.dataset.preparo}</p>
+            <p class="icon-paragraph"><strong></strong>${card.dataset.banho}</p>
+          `;
+        break;
+
+      case 'conhecimentos':
+        extraHTML = `
+            <p class="icon-paragraph"><strong>Expilicação:</strong>${card.dataset.explicacao}</p>
+            <p class="icon-paragraph"><strong></strong>${card.dataset.texto}</p>
           `;
         break;
 
@@ -288,36 +316,6 @@ document.querySelectorAll(".card").forEach(card => {
             <p class="icon-paragraph"><img src="sem-foto.jpg"  class="icon top-icon"> <strong>Ibejada:</strong> ${card.dataset.ibejada}</p>
             <p class="icon-paragraph"><img src="exu-veludo.jpg"  class="icon top-icon"><img src="sem-foto.jpg"  class="icon top-icon"><strong>Linhas de Esquerda:</strong> ${card.dataset.esquerda}</p>
             <p class="icon-paragraph"><strong>Obrigações:</strong> ${card.dataset.obrigacoes}</p>
-          `;
-        break;
-
-      case 'ponto':
-        extraHTML = `
-            <p class="icon-paragraph"><strong>Nome Ponto:</strong> ${card.dataset.nomeponto}</p>
-            <p class="icon-paragraph"><strong></strong>${card.dataset.pontotexto}</p>
-          `;
-        break;
-
-      case 'banho':
-        extraHTML = `
-            <p class="icon-paragraph"><strong>Tipo de Banho:</strong> ${card.dataset.tipobanho}</p>
-            <p class="icon-paragraph"><strong>Modo de Preparo:</strong>${card.dataset.preparo}</p>
-            <p class="icon-paragraph"><strong></strong>${card.dataset.banho}</p>
-          `;
-        break;
-
-      case 'guias':
-        extraHTML = `
-            <p class="icon-paragraph"><strong>Tipo de Banho:</strong> ${card.dataset.tipobanho}</p>
-            <p class="icon-paragraph"><strong>Modo de Preparo:</strong>${card.dataset.preparo}</p>
-            <p class="icon-paragraph"><strong></strong>${card.dataset.banho}</p>
-          `;
-        break;
-
-      case 'conhecimentos':
-        extraHTML = `
-            <p class="icon-paragraph"><strong>Expilicação:</strong>${card.dataset.explicacao}</p>
-            <p class="icon-paragraph"><strong></strong>${card.dataset.texto}</p>
           `;
         break;
 
