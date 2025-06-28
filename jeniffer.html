@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeniffer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logosite.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cabecalho">
+        <h1 id="bemvindo">Bem-vindo!</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <nav id="menu-nav"></nav>
+    </div>
+
+    <script>
+        const usuarioLogado = localStorage.getItem("usuarioLogado");
+        const usuarios = JSON.parse(localStorage.getItem("usuarios") || "{}");
+        const pagina = location.pathname.split("/").pop();
+        const dados = usuarios[usuarioLogado];
+
+        if (!usuarioLogado || !dados || !dados.aprovado || !dados.permissoes.includes(pagina)) {
+            alert("Acesso negado!");
+            location.href = "index.html";
+        }
+
+        document.getElementById("bemvindo").innerText = `Bem-vindo(a)!! ${usuarioLogado}`;
+
+        const menuNav = document.getElementById("menu-nav");
+        dados.permissoes.forEach(pagina => {
+            const nomePagina = pagina.replace(".html", "")
+                .replace(/-/g, " ")
+                .replace(/\b\w/g, l => l.toUpperCase());
+            const link = document.createElement("a");
+            link.href = pagina;
+            link.innerText = nomePagina;
+            menuNav.appendChild(link);
+        });
+
+        function logout() {
+            localStorage.removeItem("usuarioLogado");
+            location.href = "index.html";
+        }
+    </script>
+
+    <section class="card-container">
+
+        <div class="card" data-tipo="jennifer" data-nome="Jennifer" data-tempo_de_casa="Inicio em Junho-2025"
+            data-buzios="XXXXXXXXXX&lt;/p&gt;----------&lt;/p&gt;"
+            data-orixa_de_frente="Iansa&lt;/p&gt;----------&lt;/p&gt;"
+            data-orixa_de_costas="Oxossi&lt;/p&gt;----------&lt;/p&gt;"
+            data-orixa_de_enredo="XXXXXXXXXX&lt;/p&gt;----------&lt;/p&gt;"
+            data-mestre="XXXXXXXXXX&lt;/p&gt;----------&lt;/p&gt;"
+            data-cablocos="XXXXXXXXXX&lt;/p&gt;----------&lt;/p&gt;"
+            data-almas="XXXXXXXXXX&lt;/p&gt;----------&lt;/p&gt;"
+            data-ibejada="XXXXXXXXXX&lt;/p&gt;----------&lt;/p&gt;"
+            data-esquerda="Exu Morcego - Maria Quitéria&lt;/p&gt;----------&lt;/p&gt;"
+            data-obrigacoes="XXXXXXXXXX&lt;/p&gt;----------&lt;/p&gt;" data-img="jennifer.png" class="icon top-icon">
+            <img src="jennifer.png" alt="Jennifer">
+            <h3>Jeniffer</h3>
+            <h5>Cargo: Médium</h5>
+            <p>Atendimento com Incorporação.</p>
+        </div>
+    </section>
+
+    <section class="card-container">
+
+        <div class="card" data-tipo="orixas" data-nome="Iansã" data-diadasemana="Sabados" data-folhaseervas="xxxxxxxxxx"
+            data-pedras="xxxxxxxxxx" data-oferendas="xxxxxxxxxx" data-observacoes="xxxxxxxxxxxxxx" data-img="iansa.jpg">
+            <img src="pin-iansa.jpg" alt="Iansã">
+            <h3>Iansã</h3>
+            <h5>Trono : Lei</h5>
+            <p>Ordem, combate ao mal, disciplina, quebra de demandas negativas.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/JjOJm7pbPxk?si=HBjfQPgV0hCv7XHv" title="Meu pai que barulho é esse"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card" data-tipo="orixas" data-nome="Oxóssi" data-diadasemana="Quintas Feiras"
+            data-folhaseervas="xxxxxxxxxx" data-pedras="xxxxxxxxxx" data-oferendas="xxxxxxxxxx"
+            data-observacoes="xxxxxxxxxxxxxx" data-img="oxossi.jpg">
+            <img src="pin-oxossi.jpg" alt="Oxóssi">
+            <h3>Oxóssi</h3>
+            <h5>Trono : Conhecimento</h5>
+            <p>Sabedoria, estudo, aprendizado, intuição e razão.</p>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/1K7h_hfAf0Y?si=4Oe1IMUt1hg5V80y&amp;start=1"
+                title="Eu vi chover , Eu vi relampiar" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="exu-morcego.jpg" alt="Exu Morcego">
+            <h3>Exu Morcego</h3>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/4kiqcZhLORM?si=c8mwU1s48hZBRpx3" title="Rei da Calunga"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="card">
+            <img src="quiteria.jpg" alt="Quiteria">
+            <h3>Quiteria</h3>
+            <iframe class="video-container" width="300" height="250"
+                src="https://www.youtube.com/embed/3excwV4vyLs?si=LwaIwpUSL8CLzSOV&amp;start=7" title="QUI QUI QUI"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modal-content">
+            <span class="close">&times;</span>
+        </div>
+    </div>
+</body>
+<script src="Script.js"></script>
+
+</html>
