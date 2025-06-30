@@ -159,6 +159,31 @@ document.querySelectorAll(".card").forEach(card => {
           `;
         break;
 
+      case 'diasdosorixas':
+        extraHTML = `
+            <p><strong>Oxala :</strong> ${card.dataset.orixa}</p>
+            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p><strong>Nanã :</strong> ${card.dataset.orixa}</p>
+            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p><strong>Iemanjá :</strong> ${card.dataset.orixa}</p>
+            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p><strong>Omolu - Obaluayê :</strong> ${card.dataset.orixa}</p>
+            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p><strong>Ogum :</strong> ${card.dataset.orixa}</p>
+            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p><strong>Oxum :</strong> ${card.dataset.orixa}</p>
+            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p><strong>Iansã :</strong> ${card.dataset.orixa}</p>
+            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p><strong>Oxóssi :</strong> ${card.dataset.orixa}</p>
+            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p><strong>Xangô :</strong> ${card.dataset.orixa}</p>
+            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p><strong>Exu :</strong> ${card.dataset.orixa}</p>
+            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+          `;
+        break;
+
       case 'stefanie':
         extraHTML = `
             <p class="icon-paragraph"><strong>Inicio na Tenda:</strong> ${card.dataset.tempo_de_casa}</p>
