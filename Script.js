@@ -162,25 +162,30 @@ document.querySelectorAll(".card").forEach(card => {
       case 'diasdosorixas':
         extraHTML = `
             <p><strong>Oxala :</strong> ${card.dataset.orixa}</p>
-            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p>Comemorado Dia : ${card.dataset.dia}</p>
             <p><strong>Nanã :</strong> ${card.dataset.orixa}</p>
-            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p>Comemorado Dia : ${card.dataset.dia}</p>
             <p><strong>Iemanjá :</strong> ${card.dataset.orixa}</p>
-            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p>Comemorado Dia : ${card.dataset.dia}</p>
             <p><strong>Omolu - Obaluayê :</strong> ${card.dataset.orixa}</p>
-            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p>Comemorado Dia : ${card.dataset.dia}</p>
             <p><strong>Ogum :</strong> ${card.dataset.orixa}</p>
-            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p>Comemorado Dia : ${card.dataset.dia}</p>
             <p><strong>Oxum :</strong> ${card.dataset.orixa}</p>
-            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p>Comemorado Dia : ${card.dataset.dia}</p>
             <p><strong>Iansã :</strong> ${card.dataset.orixa}</p>
-            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p>Comemorado Dia : ${card.dataset.dia}</p>
             <p><strong>Oxóssi :</strong> ${card.dataset.orixa}</p>
-            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p>Comemorado Dia : ${card.dataset.dia}</p>
             <p><strong>Xangô :</strong> ${card.dataset.orixa}</p>
-            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p>Comemorado Dia : ${card.dataset.dia}</p>
             <p><strong>Exu :</strong> ${card.dataset.orixa}</p>
-            <p><strong>Comemorado Dia :</strong> ${card.dataset.dia}</p>
+            <p>Comemorado Dia : ${card.dataset.dia}</p>            
+            <p><strong>''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''</strong> ${card.dataset.espaco}</p>
+            <p><strong>Ciganos :</strong> ${card.dataset.orixa}</p>
+            <p>Comemorado Dia : ${card.dataset.dia}</p>
+            <p><strong>Pretos Velhos :</strong> ${card.dataset.orixa}</p>
+            <p>Comemorado Dia : ${card.dataset.dia}</p>
           `;
         break;
 
